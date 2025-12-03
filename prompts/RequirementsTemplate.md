@@ -49,5 +49,4 @@ As a user, I want [one-line description].
 ---
 
 ## Key
-- `+++ Optional` indicates the criteria items are optional and not required for core completion.
 - `N` denotes an incrementing integer for repeated sections (like User N or Optional N).
