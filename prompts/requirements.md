@@ -1,4 +1,8 @@
-## F1: Static Homepage Hero Section Outline
+# Document Usage
+
+# Features
+
+## F1: Static Homepage
 
 --
 Owner: @student
