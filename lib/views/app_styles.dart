@@ -65,3 +65,8 @@ const TextStyle pageTitle = TextStyle(
   color: Colors.black,
   height: 1.2,
 );
+
+const TextStyle pageText = TextStyle(
+  fontSize: 16,
+  color: Colors.black
+);
