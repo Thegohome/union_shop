@@ -327,4 +327,69 @@ history to build trust and confidence in the brand.
 - [ ] 5. Add company values section highlighting key principles or attributes
 - [ ] 6. Ensure responsive layout that works on mobile and desktop viewports
 - [ ] 7. Write widget tests validating page content, layout, and navigation
+
+## F6: Authentication UI
+
+--
+Owner: @student
+Priority: Medium
+Status: Planned
+--
+Summary: Build authentication UI with login and signup forms (non-functional widgets acceptable)
+--
+Outcome: Users see properly structured login and signup forms with fields ready for future backend integration
+--
+
+### Success Criteria
+
+#### Tests:
+- [ ] Authentication pages render with proper heading and form title
+- [ ] Login form displays email/username and password input fields
+- [ ] Signup form displays name, email, password, and confirm password fields
+- [ ] Form fields have appropriate labels, placeholders, and input validation UI
+- [ ] Submit buttons and navigation links between login/signup are present and styled
+
+#### UI:
+- [ ] Login page has clear heading "Login" or "Sign In" with centered form layout
+- [ ] All input fields are clearly labeled with descriptive text
+- [ ] Password fields mask input with dots or asterisks for security appearance
+- [ ] Form has prominent submit button styled to match app theme (purple background)
+- [ ] Links to signup page from login and vice versa with appropriate styling
+
+#### Internal Logic (APIs):
+- [ ] Forms implemented using TextField widgets with TextEditingControllers
+- [ ] Form validation logic displays error messages for empty or invalid fields
+- [ ] Submit buttons have onPressed callbacks (placeholder functions for now)
+- [ ] Forms use Padding and Column for organized vertical layout
+- [ ] Forms are wrapped in scrollable container (SingleChildScrollView) for small screens
+
+#### Business Logic:
+N/A
+
+### Dependencies:
+N/A
+
+### Testimonies
+
+#### User 1
+```
+As a returning customer, I want to see a clear and intuitive login form so I 
+can quickly sign in to my account and view my order history.
+```
+
+#### User 2
+```
+As a new customer, I want a straightforward signup form with clear instructions 
+so I can create an account to make purchases and track orders.
+```
+
+### Implementation Plan
+
+- [ ] 1. Create LoginScreen widget with heading, email field, password field
+- [ ] 2. Create SignupScreen widget with name, email, password fields
+- [ ] 3. Add form validation logic to check for empty fields and display errors
+- [ ] 4. Add "Forgot Password?" link on login form and appropriate styling
+- [ ] 5. Add submit button on both forms with placeholder callback functions
+- [ ] 6. Add navigation links between login and signup pages using TextButton
+- [ ] 7. Write widget tests validating form fields, buttons, and navigation
 - [ ] 7. Write widget tests validating page content, layout, and navigation
