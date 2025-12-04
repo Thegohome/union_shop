@@ -45,3 +45,9 @@ const TextStyle footerHeading = TextStyle(
   fontWeight: FontWeight.bold,
   color: Colors.black
 );
+
+const TextStyle footerOpeningHoursText = TextStyle(
+  fontSize: 14, 
+  fontWeight: FontWeight.bold,
+  fontStyle: FontStyle.italic,
+);
