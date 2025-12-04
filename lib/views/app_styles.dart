@@ -32,7 +32,7 @@ const TextStyle buttonText = TextStyle(
   letterSpacing: 1,
 );
 
-// Products Section Header
+// Products Section Header for Homepage
 const TextStyle productsSectionHeader = TextStyle(
   fontSize: 20,
   color: Colors.black,
