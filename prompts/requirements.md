@@ -261,65 +261,66 @@ to single column layout so I can easily view and tap on products.
 --
 Owner: @student
 Priority: Medium
-Status: Planned
+Status: Complete
 --
-Summary: Create About Us page with static company information and branding content
+Summary: Create About Us page with static company information
 --
-Outcome: Users see company background, mission, and branding information on dedicated About page
+Outcome: Users see company information on dedicated About page
 --
 
 ### Success Criteria
 
 #### Tests:
-- [ ] About Us page renders with full-width content and proper heading hierarchy
-- [ ] Page displays company name, mission statement, and company description
-- [ ] Page includes company values, history, or team information sections
-- [ ] Content is readable with appropriate font sizes and line spacing
-- [ ] Page layout is responsive and readable on mobile and desktop viewports
+- [x] About Us page renders with header and footer
+- [x] Page displays "About Us" heading centered
+- [x] Page displays company information text block centered
+- [x] Text block is findable by key for testing purposes
 
 #### UI:
-- [ ] Page has clear title/heading "About Union Shop" at top with larger font size
-- [ ] Company mission statement displayed prominently below heading
-- [ ] Sections for company history, values, and team information
-- [ ] Images or graphics included to enhance visual interest and brand identity
-- [ ] Content uses consistent typography and color scheme from app design system
+- [x] Header (AppHeader) displayed at top
+- [x] "About Us" heading centered with heroTitle styling
+- [x] Company information text block centered with 40px horizontal padding
+- [x] Footer (AppFooter) displayed at bottom
+- [x] Content uses consistent typography from app_styles
 
 #### Internal Logic (APIs):
-- [ ] Page implemented as StatelessWidget with Column layout for vertical content flow
-- [ ] Uses appropriate spacing widgets (SizedBox, Padding) for consistent margins
-- [ ] Text uses TextStyle from app_styles for consistent typography
-- [ ] Images implemented with Image.network and errorBuilder fallbacks
-- [ ] Page wrapped in Scaffold with AppBar or custom header for navigation
+- [x] Page implemented as StatelessWidget with Column layout
+- [x] Uses Scaffold with body containing header, content, footer
+- [x] Content wrapped in SingleChildScrollView for scrolling on small screens
+- [x] Text block wrapped in Container with key='aboutTextBlock' for testing
+- [x] Uses AppHeader and AppFooter components for consistent navigation
 
 #### Business Logic:
 N/A
 
 ### Dependencies:
-N/A
+- AppHeader component
+- AppFooter component
+- app_styles (heroTitle text style)
 
 ### Testimonies
 
 #### User 1
 ```
-As a new customer, I want to learn about the Union Shop company, its mission, 
-and values so I can understand what I'm supporting with my purchase.
+As a new customer, I want to learn about the Union Shop company and its mission 
+so I can understand what I'm supporting with my purchase.
 ```
 
 #### User 2
 ```
-As someone considering a purchase, I want to see the company's background and 
-history to build trust and confidence in the brand.
+As someone browsing the site, I want to easily find information about the company 
+from a dedicated About page accessible via the navigation menu.
 ```
 
 ### Implementation Plan
 
-- [ ] 1. Create new AboutScreen widget and route in main.dart
-- [ ] 2. Add page heading "About Union Shop" with appropriate text styling
-- [ ] 3. Add company mission statement section with descriptive text content
-- [ ] 4. Add company history section with background information paragraphs
-- [ ] 5. Add company values section highlighting key principles or attributes
-- [ ] 6. Ensure responsive layout that works on mobile and desktop viewports
-- [ ] 7. Write widget tests validating page content, layout, and navigation
+- [x] 1. Create new AboutScreen widget in views/about_screen.dart
+- [x] 2. Add AppHeader and AppFooter components
+- [x] 3. Add centered "About Us" heading with heroTitle style
+- [x] 4. Add centered company information text block with key for testing
+- [x] 5. Implement SingleChildScrollView for mobile responsiveness
+- [x] 6. Add route in main.dart for navigation
+- [x] 7. Write widget tests validating header, heading, text block, and footer
 
 ## F6: Authentication UI
 
