@@ -37,7 +37,7 @@ class HomeScreen extends StatelessWidget {
                     child: const Text(
                       'BIG SALE! OUR ESSENTIAL RANGE HAS DROPPED IN PRICE! OVER 20% OFF! COME GRAB YOURS WHILE STOCK LASTS!',
                       textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.white, fontSize: 16),
+                      style: bannerHeading,
                     ),
                   ),
                   // Main header
@@ -80,10 +80,7 @@ class HomeScreen extends StatelessWidget {
                                     onPressed: placeholderCallbackForButtons,
                                     child: const Text(
                                       'Home',
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 16,
-                                      ),
+                                      style: navbarMenuItem,
                                     ),
                                   ),
                                   const SizedBox(width: 24),
@@ -94,10 +91,7 @@ class HomeScreen extends StatelessWidget {
                                       children: [
                                         Text(
                                           'Shop',
-                                          style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 16,
-                                          ),
+                                          style: navbarMenuItem,
                                         ),
                                         SizedBox(width: 8),
                                         Icon(
@@ -116,10 +110,7 @@ class HomeScreen extends StatelessWidget {
                                       children: [
                                         Text(
                                           'The Print Shack',
-                                          style: TextStyle(
-                                            color: Colors.black,
-                                            fontSize: 16,
-                                          ),
+                                          style: navbarMenuItem,
                                         ),
                                         SizedBox(width: 8),
                                         Icon(
@@ -135,10 +126,7 @@ class HomeScreen extends StatelessWidget {
                                     onPressed: placeholderCallbackForButtons,
                                     child: const Text(
                                       'SALE!',
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 16,
-                                      ),
+                                      style: navbarMenuItem,
                                     ),
                                   ),
                                   const SizedBox(width: 24),
@@ -146,10 +134,7 @@ class HomeScreen extends StatelessWidget {
                                     onPressed: placeholderCallbackForButtons,
                                     child: const Text(
                                       'About',
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 16,
-                                      ),
+                                      style: navbarMenuItem,
                                     ),
                                   ),
                                 ],
@@ -268,21 +253,12 @@ class HomeScreen extends StatelessWidget {
                       children: [
                         const Text(
                           'Placeholder Hero Title',
-                          style: TextStyle(
-                            fontSize: 32,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                            height: 1.2,
-                          ),
+                          style: heroTitle,
                         ),
                         const SizedBox(height: 16),
                         const Text(
                           "This is placeholder text for the hero section.",
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
-                            height: 1.5,
-                          ),
+                          style: heroSubtitle,
                           textAlign: TextAlign.center,
                         ),
                         const SizedBox(height: 32),
@@ -297,7 +273,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                           child: const Text(
                             'BROWSE PRODUCTS',
-                            style: TextStyle(fontSize: 14, letterSpacing: 1),
+                            style: buttonText,
                           ),
                         ),
                       ],
@@ -316,11 +292,7 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     const Text(
                       'PRODUCTS SECTION',
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.black,
-                        letterSpacing: 1,
-                      ),
+                      style: productsSectionHeader,
                     ),
                     const SizedBox(height: 48),
                     GridView.count(
