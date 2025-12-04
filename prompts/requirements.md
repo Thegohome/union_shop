@@ -82,25 +82,25 @@ Outcome: Users see a professional navigation bar at top with logo, menu items, a
 ### Success Criteria
 
 #### Tests:
-- [ ] Navigation bar renders with full width and correct height across all screen sizes
-- [ ] Logo displays on left side of navbar with correct dimensions and aspect ratio
-- [ ] Menu items (Shop, About, Print Shack) display as links in navbar with proper spacing
-- [ ] Search, account, and cart icons render with correct styling and positioning
-- [ ] Navbar layout adapts responsively from mobile (375px) to desktop (1440px+) viewports
+- [x] Navigation bar renders with full width and correct height across all screen sizes
+- [x] Logo displays on left side of navbar with correct dimensions and aspect ratio
+- [x] Menu items (Shop, About, Print Shack) display as links in navbar with proper spacing
+- [x] Search, account, and cart icons render with correct styling and positioning
+- [x] Navbar layout adapts responsively from mobile (375px) to desktop (1440px+) viewports
 
 #### UI:
-- [ ] Logo positioned on left side of navbar with consistent sizing across viewports
-- [ ] Navigation menu items displayed horizontally with readable font size (16-18px)
-- [ ] Search, account, and cart icons positioned on right side with consistent sizing
-- [ ] Icons rendered with proper fill color matching app design theme with visual feedback
-- [ ] Navbar has consistent background color and subtle border/shadow for depth and separation
+- [x] Logo positioned on left side of navbar with consistent sizing across viewports
+- [x] Navigation menu items displayed horizontally with readable font size (16-18px)
+- [x] Search, account, and cart icons positioned on right side with consistent sizing
+- [x] Icons rendered with proper fill color matching app design theme with visual feedback
+- [x] Navbar has consistent background color and subtle border/shadow for depth and separation
 
 #### Internal Logic (APIs):
-- [ ] Navbar uses Row widget with Expanded/Spacer widgets for flexible layout alignment
-- [ ] Logo implemented as Image widget with proper error handling and sizing
-- [ ] Menu items implemented as TextButton widgets with placeholder callback functions
-- [ ] Icons implemented using Icon widget from Material Design icon set
-- [ ] Navbar responsive with items scaling/reflowing properly across all screen sizes
+- [x] Navbar uses Row widget with Expanded/Spacer widgets for flexible layout alignment
+- [x] Logo implemented as Image widget with proper error handling and sizing
+- [x] Menu items implemented as TextButton widgets with placeholder callback functions
+- [x] Icons implemented using Icon widget from Material Design icon set
+- [x] Navbar responsive with items scaling/reflowing properly across all screen sizes
 
 #### Business Logic:
 N/A
@@ -131,4 +131,4 @@ confusion or accidental taps.
 - [x] 3. Implement horizontal menu with Shop, About, and Print Shack text buttons
 - [x] 4. Use Row with Expanded/Spacer widgets for proper spacing and flexible layout alignment
 - [x] 5. Apply background color and styling matching design system for navbar container
-- [ ] 6. Write widget tests validating navbar layout, component rendering, and responsiveness across viewports
+- [x] 6. Write widget tests validating navbar layout, component rendering, and responsiveness across viewports
