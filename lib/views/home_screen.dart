@@ -343,8 +343,12 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     SizedBox(
                         width: 300,
-                        child: Text('Opening Hours', 
-                        style: footerHeading))
+                        child: Column(
+                          children: [
+                            Text('Opening Hours', 
+                            style: footerHeading),
+                          ],
+                        ))
                   ],
                 )),
           ],
