@@ -41,7 +41,7 @@ const TextStyle productsSectionHeader = TextStyle(
 
 // Footer
 const TextStyle footerHeading = TextStyle(
-  fontSize: 24,
+  fontSize: 16,
   fontWeight: FontWeight.bold,
   color: Colors.black
 );
