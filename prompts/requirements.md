@@ -413,7 +413,7 @@ Owner: @student
 Priority: High
 Status: Planned
 --
-Summary: Create Product data model with properties for name, price, images, description, variants, and sale status
+Summary: Create Product data model with properties to support name, price, images, description, variants, sale status etc.
 --
 Outcome: Application has structured data representation for products enabling dynamic content display and cart functionality
 --
@@ -422,7 +422,7 @@ Outcome: Application has structured data representation for products enabling dy
 
 #### Tests:
 - [ ] Product model instantiates with all required properties
-- [ ] Product model correctly handles optional properties (variants, sale status)
+- [ ] Product model correctly handles variants and sale status
 - [ ] Product model supports conversion to/from JSON for data persistence
 - [ ] Product equality comparison works for testing and data validation
 
@@ -430,10 +430,9 @@ Outcome: Application has structured data representation for products enabling dy
 N/A
 
 #### Internal Logic (APIs):
-- [ ] Product class created with properties: id, name, price, images, description, variants, isSale, salePrice
+- [ ] Product class created with properties: id, name, price, images, description, variants(map), isSale, salePrice
 - [ ] Product constructor with required and optional parameters
 - [ ] Product supports JSON serialization/deserialization (toJson, fromJson methods)
-- [ ] Product supports equality operator and hashCode for comparison
 - [ ] Product model located in lib/models/product.dart
 
 #### Business Logic:
@@ -466,7 +465,7 @@ products can be persisted to storage and retrieved dynamically.
 - [ ] 4. Implement Product constructor with parameter validation
 - [ ] 5. Add toJson() method for JSON serialization
 - [ ] 6. Add fromJson() factory constructor for JSON deserialization
-- [ ] 7. Implement equality operator (==) and hashCode for Product comparison
+- [ ] 7. Create tests for this elements of the implementation
 
 ## F13: Collection Data Model
 
