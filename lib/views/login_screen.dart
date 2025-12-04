@@ -66,7 +66,7 @@ class LoginScreen extends StatelessWidget {
                   ElevatedButton(
                     onPressed: _placeholderCallback,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF5856D6),
+                      backgroundColor: portsmouthPurple,
                       padding: const EdgeInsets.symmetric(vertical: 16),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),

@@ -80,7 +80,7 @@ class HomeScreen extends StatelessWidget {
                         ElevatedButton(
                           onPressed: placeholderCallbackForButtons,
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFF4d2963),
+                            backgroundColor: portsmouthPurple,
                             foregroundColor: Colors.white,
                             shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.zero,
