@@ -405,3 +405,192 @@ products to get ideas for custom items I might want to create.
 ## F9: Collection page (product list) - await F32
 ## F10: Sales Collection page - await F18 + F29 + F36
 ## F11: Static Product page - await F36
+
+## F12: Product Data Model
+
+--
+Owner: @student
+Priority: High
+Status: Planned
+--
+Summary: Create Product data model with properties for name, price, images, description, variants, and sale status
+--
+Outcome: Application has structured data representation for products enabling dynamic content display and cart functionality
+--
+
+### Success Criteria
+
+#### Tests:
+- [ ] Product model instantiates with all required properties
+- [ ] Product model correctly handles optional properties (variants, sale status)
+- [ ] Product model supports conversion to/from JSON for data persistence
+- [ ] Product equality comparison works for testing and data validation
+
+#### UI:
+N/A
+
+#### Internal Logic (APIs):
+- [ ] Product class created with properties: id, name, price, images, description, variants, isSale, salePrice
+- [ ] Product constructor with required and optional parameters
+- [ ] Product supports JSON serialization/deserialization (toJson, fromJson methods)
+- [ ] Product supports equality operator and hashCode for comparison
+- [ ] Product model located in lib/models/product.dart
+
+#### Business Logic:
+- [ ] Product variant handling supports multiple options per product
+- [ ] Sale price logic validates sale price is less than regular price
+- [ ] Product supports multiple images with fallback for missing images
+
+### Dependencies:
+N/A
+
+### Testimonies
+
+#### User 1
+```
+As a developer, I want a well-structured Product model so I can reliably 
+store and retrieve product information throughout the application.
+```
+
+#### User 2
+```
+As a system architect, I want Product data properly serializable so that 
+products can be persisted to storage and retrieved dynamically.
+```
+
+### Implementation Plan
+
+- [ ] 1. Create lib/models/product.dart file
+- [ ] 2. Define Product class with required properties: id, name, price, images, description
+- [ ] 3. Add optional properties: variants, isSale, salePrice
+- [ ] 4. Implement Product constructor with parameter validation
+- [ ] 5. Add toJson() method for JSON serialization
+- [ ] 6. Add fromJson() factory constructor for JSON deserialization
+- [ ] 7. Implement equality operator (==) and hashCode for Product comparison
+
+## F13: Collection Data Model
+
+--
+Owner: @student
+Priority: High
+Status: Planned
+--
+Summary: Create Collection data model with properties for name, description, products, and category type
+--
+Outcome: Application has structured data representation for product collections enabling category browsing and filtering
+--
+
+### Success Criteria
+
+#### Tests:
+- [ ] Collection model instantiates with all required properties
+- [ ] Collection model correctly stores list of products
+- [ ] Collection model supports conversion to/from JSON
+- [ ] Collection equality comparison works for testing and data validation
+
+#### UI:
+N/A
+
+#### Internal Logic (APIs):
+- [ ] Collection class created with properties: id, name, description, products, categoryType, image
+- [ ] Collection constructor with required and optional parameters
+- [ ] Collection supports JSON serialization/deserialization (toJson, fromJson methods)
+- [ ] Collection supports equality operator and hashCode for comparison
+- [ ] Collection model located in lib/models/collection.dart
+
+#### Business Logic:
+- [ ] Collection maintains ordered list of Product objects
+- [ ] Collection supports category type enum (All, Sales, Featured, etc.)
+- [ ] Collection provides product count and filtering utilities
+
+### Dependencies:
+- Product model (F12)
+
+### Testimonies
+
+#### User 1
+```
+As a developer, I want a well-structured Collection model so I can organize 
+and manage groups of products by category or promotional intent.
+```
+
+#### User 2
+```
+As a system architect, I want Collection data properly structured so that 
+collections can be fetched, stored, and displayed dynamically.
+```
+
+### Implementation Plan
+
+- [ ] 1. Create lib/models/collection.dart file
+- [ ] 2. Define Collection class with required properties: id, name, description, categoryType
+- [ ] 3. Add products property to hold list of Product objects
+- [ ] 4. Add optional image property for collection display
+- [ ] 5. Implement Collection constructor with parameter validation
+- [ ] 6. Add toJson() method for JSON serialization
+- [ ] 7. Add fromJson() factory constructor for JSON deserialization
+
+## F14: Data Repository/Service Layer
+
+--
+Owner: @student
+Priority: High
+Status: Planned
+--
+Summary: Build data repository/service layer to provide collections and products to views
+--
+Outcome: Views have clean, centralized access to product and collection data through a repository interface
+--
+
+### Success Criteria
+
+#### Tests:
+- [ ] Repository provides method to fetch all collections
+- [ ] Repository provides method to fetch specific collection by id
+- [ ] Repository provides method to fetch all products
+- [ ] Repository provides method to fetch specific product by id
+- [ ] Repository returns hardcoded data for initial implementation
+
+#### UI:
+N/A
+
+#### Internal Logic (APIs):
+- [ ] ProductRepository class created with methods for product access
+- [ ] CollectionRepository class created with methods for collection access
+- [ ] Repository provides async methods for data fetching
+- [ ] Repository supports filtering and search operations
+- [ ] Repository located in lib/repositories/ folder
+
+#### Business Logic:
+- [ ] Repository initializes with hardcoded sample data
+- [ ] Repository provides single point of access for data layer
+- [ ] Repository isolates business logic from views
+
+### Dependencies:
+- Product model (F12)
+- Collection model (F13)
+
+### Testimonies
+
+#### User 1
+```
+As a developer, I want a clean repository interface so I can fetch products 
+and collections without worrying about data source implementation details.
+```
+
+#### User 2
+```
+As an architect, I want a centralized service layer so that swapping from 
+hardcoded data to API calls or local storage is straightforward.
+```
+
+### Implementation Plan
+
+- [ ] 1. Create lib/repositories/ folder
+- [ ] 2. Create lib/repositories/product_repository.dart with ProductRepository class
+- [ ] 3. Add getAll() method to fetch all products
+- [ ] 4. Add getById(id) method to fetch specific product
+- [ ] 5. Create lib/repositories/collection_repository.dart with CollectionRepository class
+- [ ] 6. Add getAll() method to fetch all collections
+- [ ] 7. Add getById(id) method to fetch specific collection
+- [ ] 8. Initialize repositories with hardcoded sample data
