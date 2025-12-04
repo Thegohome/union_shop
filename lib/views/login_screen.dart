@@ -73,7 +73,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                     child: const Text(
-                      'Sign in with External Provider',
+                      'Sign in with PortShop',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 16,
