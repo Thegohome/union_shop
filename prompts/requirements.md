@@ -13,10 +13,6 @@ This document provides detailed specifications for individual features from the 
 ## F1: Static Homepage
 
 --
-Owner: @student
-Priority: High
-Status: Implemented
---
 Summary: Create static homepage hero section with promotional banner and call-to-action button
 --
 Outcome: Users see an engaging hero section on homepage with background image, promotional text, and functional call-to-action button
@@ -74,3 +70,67 @@ on my device screen.
 - [x] 5. Layer semi-transparent black overlay (0.7 alpha) over background within Stack
 - [x] 6. Add Positioned centered content layer with Column for title, subtitle, and button
 - [x] 7. Write and run tests to verify responsive behavior and styling across screen sizes
+
+## F2: Static Navigation Bar
+
+--
+Summary: Build static navigation bar with logo, menu items, search, account, and cart icons
+--
+Outcome: Users see a professional navigation bar at top with logo, menu items, and action icons for easy store navigation
+--
+
+### Success Criteria
+
+#### Tests:
+- [ ] Navigation bar renders with full width and correct height across all screen sizes
+- [ ] Logo displays on left side of navbar with correct dimensions and aspect ratio
+- [ ] Menu items (Shop, About, Print Shack) display as links in navbar with proper spacing
+- [ ] Search, account, and cart icons render with correct styling and positioning
+- [ ] Navbar layout adapts responsively from mobile (375px) to desktop (1440px+) viewports
+
+#### UI:
+- [ ] Logo positioned on left side of navbar with consistent sizing across viewports
+- [ ] Navigation menu items displayed horizontally with readable font size (16-18px)
+- [ ] Search, account, and cart icons positioned on right side with consistent sizing
+- [ ] Icons rendered with proper fill color matching app design theme with visual feedback
+- [ ] Navbar has consistent background color and subtle border/shadow for depth and separation
+
+#### Internal Logic (APIs):
+- [ ] Navbar uses Row widget with Expanded/Spacer widgets for flexible layout alignment
+- [ ] Logo implemented as Image widget with proper error handling and sizing
+- [ ] Menu items implemented as TextButton widgets with placeholder callback functions
+- [ ] Icons implemented using Icon widget from Material Design icon set
+- [ ] Navbar responsive with items scaling/reflowing properly across all screen sizes
+
+#### Business Logic:
+N/A
+
+### Dependencies:
+N/A
+
+### Testimonies
+
+#### User 1
+```
+As a customer browsing the Union Shop, I want to see a clear navigation bar 
+with the logo and menu options so I can easily understand the store structure 
+and quickly navigate to different sections.
+```
+
+#### User 2
+```
+As a mobile user, I want the navbar to adapt to my screen size with icons 
+and text remaining accessible and properly spaced so I can navigate without 
+confusion or accidental taps.
+```
+
+### Implementation Plan
+
+- [ ] 1. Review existing header/navbar structure in home_screen.dart to assess current state
+- [ ] 2. Verify logo image is accessible (from assets or network URL) with error handling
+- [ ] 3. Implement horizontal menu with Shop, About, and Print Shack text buttons
+- [ ] 4. Add search, account, and cart icons using Material Design Icon widgets
+- [ ] 5. Use Row with Expanded/Spacer widgets to ensure proper spacing and alignment
+- [ ] 6. Apply background color, borders/shadows matching design system for navbar styling
+- [ ] 7. Verify navbar displays consistently on homepage and other pages
+- [ ] 8. Write widget tests validating layout, component rendering, and responsiveness
