@@ -67,10 +67,10 @@ on my device screen.
 
 ### Implementation Plan
 
-- [ ] 1. Calculate hero height as 40% of viewport using MediaQuery.of(context).size.height
-- [ ] 2. Create SizedBox container with responsive height calculation and full width
-- [ ] 3. Implement Stack layout with Positioned.fill for background image layer and overlay
-- [ ] 4. Load background image from network URL with error builder for fallback handling
-- [ ] 5. Layer semi-transparent black overlay (0.7 alpha) over background within Stack
-- [ ] 6. Add Positioned centered content layer with Column for title, subtitle, and button
-- [ ] 7. Write and run tests to verify responsive behavior and styling across screen sizes
+- [x] 1. Calculate hero height as 40% of viewport using MediaQuery.of(context).size.height
+- [x] 2. Create SizedBox container with responsive height calculation and full width
+- [x] 3. Implement Stack layout with Positioned.fill for background image layer and overlay
+- [x] 4. Load background image from network URL with error builder for fallback handling
+- [x] 5. Layer semi-transparent black overlay (0.7 alpha) over background within Stack
+- [x] 6. Add Positioned centered content layer with Column for title, subtitle, and button
+- [x] 7. Write and run tests to verify responsive behavior and styling across screen sizes
