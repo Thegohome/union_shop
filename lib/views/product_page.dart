@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:union_shop/views/app_styles.dart';
 import 'package:union_shop/views/common_widgets.dart';
 
 class ProductPage extends StatelessWidget {
@@ -86,7 +87,7 @@ class ProductPage extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xFF4d2963),
+                      color: portsmouthPurple,
                     ),
                   ),
 
