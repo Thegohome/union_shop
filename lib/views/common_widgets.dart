@@ -58,6 +58,25 @@ class ProductCard extends StatelessWidget {
   }
 }
 
+class OpeningHourTextLine extends StatelessWidget {
+  final String text;
+  final double bottomPadding;
+
+  const OpeningHourTextLine(
+    this.text, {
+    this.bottomPadding = 8,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(bottom: bottomPadding),
+      child: Text(text, style: footerOpeningHoursText),
+    );
+  }
+}
+
 class AppHeader extends StatelessWidget {
   const AppHeader({super.key});
 
@@ -262,7 +281,7 @@ class AppHeader extends StatelessWidget {
 class AppFooter extends StatelessWidget {
   const AppFooter({super.key});
 
-    void _placeholderCallback() {
+  void _placeholderCallback() {
     // Placeholder for buttons that don't have functionality yet
   }
 
@@ -283,32 +302,18 @@ class AppFooter extends StatelessWidget {
                       children: [
                         Text('Opening Hours', style: footerHeading),
                         SizedBox(height: 16),
-                        Text('❄️ Winter Break Closure Dates ❄️',
-                            style: footerOpeningHoursText),
-                        SizedBox(height: 8),
-                        Text('Closing 4pm 19/12/2025', style: footerOpeningHoursText),
-                        SizedBox(height: 8),
-                        Text('Reopening 10am 05/01/2026',
-                            style: footerOpeningHoursText),
-                        SizedBox(height: 8),
-                        Text('Last post date: 12pm on 18/12/2025',
-                            style: footerOpeningHoursText),
-                        SizedBox(height: 8),
-                        Text('------------------------',
-                            style: footerOpeningHoursText),
-                        SizedBox(height: 8),
-                        Text('(Term Time)', style: footerOpeningHoursText),
-                        SizedBox(height: 8),
-                        Text('Monday - Friday 10am - 4pm',
-                            style: footerOpeningHoursText),
-                        SizedBox(height: 8),
-                        Text('(Outside of Term Time / Consolidation Weeks)',
-                            style: footerOpeningHoursText),
-                        SizedBox(height: 8),
-                        Text('Monday - Friday 10am - 3pm',
-                            style: footerOpeningHoursText),
-                        SizedBox(height: 8),
-                        Text('Purchase online 24/7', style: footerOpeningHoursText),
+                        OpeningHourTextLine('❄️ Winter Break Closure Dates ❄️'),
+                        OpeningHourTextLine('Closing 4pm 19/12/2025'),
+                        OpeningHourTextLine('Reopening 10am 05/01/2026'),
+                        OpeningHourTextLine(
+                            'Last post date: 12pm on 18/12/2025'),
+                        OpeningHourTextLine('------------------------'),
+                        OpeningHourTextLine('(Term Time)'),
+                        OpeningHourTextLine('Monday - Friday 10am - 4pm'),
+                        OpeningHourTextLine(
+                            '(Outside of Term Time / Consolidation Weeks)'),
+                        OpeningHourTextLine('Monday - Friday 10am - 3pm'),
+                        OpeningHourTextLine('Purchase online 24/7'),
                       ],
                     )),
                 const SizedBox(
@@ -332,13 +337,16 @@ class AppFooter extends StatelessWidget {
                           const SizedBox(height: 16),
                           Row(
                             children: [
-                              SizedBox(width: 175,
+                              SizedBox(
+                                width: 175,
                                 child: TextFormField(
-                                  decoration:
-                                      const InputDecoration(hintText: 'Email Address'),
+                                  decoration: const InputDecoration(
+                                      hintText: 'Email Address'),
                                 ),
                               ),
-                              ElevatedButton(onPressed: _placeholderCallback, child: const Text('SUBSCRIBE'))
+                              ElevatedButton(
+                                  onPressed: _placeholderCallback,
+                                  child: const Text('SUBSCRIBE'))
                             ],
                           )
                         ]))
@@ -346,7 +354,6 @@ class AppFooter extends StatelessWidget {
             ),
             const Divider(height: 5, thickness: 1, color: Colors.black)
           ],
-        )
-        );
+        ));
   }
 }
