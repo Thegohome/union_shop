@@ -187,7 +187,9 @@ void main() {
         await tester.pump();
 
         // Check that footer is present
-        expect(find.text('Placeholder Footer'), findsOneWidget);
+        expect(find.text('Opening Hours'), findsOneWidget);
+        expect(find.text('Help and Information'), findsOneWidget);
+        expect(find.text('Latest Offers'), findsOneWidget);
       });
     });
   });
