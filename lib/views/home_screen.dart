@@ -344,7 +344,7 @@ class HomeScreen extends StatelessWidget {
                     SizedBox(
                         width: 300,
                         child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text('Opening Hours', style: footerHeading),
                             SizedBox(height: 16),
