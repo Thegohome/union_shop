@@ -344,9 +344,39 @@ class HomeScreen extends StatelessWidget {
                     SizedBox(
                         width: 300,
                         child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Text('Opening Hours', 
-                            style: footerHeading),
+                            Text('Opening Hours', style: footerHeading),
+                            SizedBox(height: 16),
+                            Text(
+                              '❄️ Winter Break Closure Dates ❄️',
+                              style: TextStyle(
+                                  fontSize: 14, fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(height: 8),
+                            Text('Closing 4pm 19/12/2025'),
+                            SizedBox(height: 8),
+                            Text('Reopening 10am 05/01/2026'),
+                            SizedBox(height: 8),
+                            Text('Last post date: 12pm on 18/12/2025'),
+                            SizedBox(height: 8),
+                            Text('------------------------'),
+                            SizedBox(height: 8),
+                            Text(
+                              '(Term Time)',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(height: 8),
+                            Text('Monday - Friday 10am - 4pm'),
+                            SizedBox(height: 8),
+                            Text(
+                              '(Outside of Term Time / Consolidation Weeks)',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(height: 8),
+                            Text('Monday - Friday 10am - 3pm'),
+                            SizedBox(height: 8),
+                            Text('Purchase online 24/7'),
                           ],
                         ))
                   ],
