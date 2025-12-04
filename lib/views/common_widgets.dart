@@ -262,51 +262,83 @@ class AppHeader extends StatelessWidget {
 class AppFooter extends StatelessWidget {
   const AppFooter({super.key});
 
+    void _placeholderCallback() {
+    // Placeholder for buttons that don't have functionality yet
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
         width: double.infinity,
         color: Colors.grey[50],
         padding: const EdgeInsets.all(24),
-        child: const Wrap(
-          children: [
-            SizedBox(
-                width: 300,
-                child: Column(
+        child: Wrap(children: [
+          const SizedBox(
+              width: 300,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Opening Hours', style: footerHeading),
+                  SizedBox(height: 16),
+                  Text('❄️ Winter Break Closure Dates ❄️',
+                      style: footerOpeningHoursText),
+                  SizedBox(height: 8),
+                  Text('Closing 4pm 19/12/2025', style: footerOpeningHoursText),
+                  SizedBox(height: 8),
+                  Text('Reopening 10am 05/01/2026',
+                      style: footerOpeningHoursText),
+                  SizedBox(height: 8),
+                  Text('Last post date: 12pm on 18/12/2025',
+                      style: footerOpeningHoursText),
+                  SizedBox(height: 8),
+                  Text('------------------------',
+                      style: footerOpeningHoursText),
+                  SizedBox(height: 8),
+                  Text('(Term Time)', style: footerOpeningHoursText),
+                  SizedBox(height: 8),
+                  Text('Monday - Friday 10am - 4pm',
+                      style: footerOpeningHoursText),
+                  SizedBox(height: 8),
+                  Text('(Outside of Term Time / Consolidation Weeks)',
+                      style: footerOpeningHoursText),
+                  SizedBox(height: 8),
+                  Text('Monday - Friday 10am - 3pm',
+                      style: footerOpeningHoursText),
+                  SizedBox(height: 8),
+                  Text('Purchase online 24/7', style: footerOpeningHoursText),
+                ],
+              )),
+          const SizedBox(
+              width: 300,
+              child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Opening Hours', style: footerHeading),
+                    Text('Help and Information', style: footerHeading),
                     SizedBox(height: 16),
-                    Text('❄️ Winter Break Closure Dates ❄️',
-                        style: footerOpeningHoursText),
+                    Text('Search', style: footerTextButtonText),
                     SizedBox(height: 8),
-                    Text('Closing 4pm 19/12/2025',
-                        style: footerOpeningHoursText),
-                    SizedBox(height: 8),
-                    Text('Reopening 10am 05/01/2026',
-                        style: footerOpeningHoursText),
-                    SizedBox(height: 8),
-                    Text('Last post date: 12pm on 18/12/2025',
-                        style: footerOpeningHoursText),
-                    SizedBox(height: 8),
-                    Text('------------------------',
-                        style: footerOpeningHoursText),
-                    SizedBox(height: 8),
-                    Text('(Term Time)', style: footerOpeningHoursText),
-                    SizedBox(height: 8),
-                    Text('Monday - Friday 10am - 4pm',
-                        style: footerOpeningHoursText),
-                    SizedBox(height: 8),
-                    Text('(Outside of Term Time / Consolidation Weeks)',
-                        style: footerOpeningHoursText),
-                    SizedBox(height: 8),
-                    Text('Monday - Friday 10am - 3pm',
-                        style: footerOpeningHoursText),
-                    SizedBox(height: 8),
-                    Text('Purchase online 24/7', style: footerOpeningHoursText),
-                  ],
-                ))
-          ],
-        ));
+                    Text('Terms & Conditions of Sale Policy',
+                        style: footerTextButtonText),
+                  ])),
+          SizedBox(
+              width: 300,
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text('Latest Offers', style: footerHeading),
+                    const SizedBox(height: 16),
+                    Row(
+                      children: [
+                        SizedBox(width: 175,
+                          child: TextFormField(
+                            decoration:
+                                const InputDecoration(hintText: 'Email Address'),
+                          ),
+                        ),
+                        ElevatedButton(onPressed: _placeholderCallback, child: const Text('SUBSCRIBE'))
+                      ],
+                    )
+                  ]))
+        ]));
   }
 }
