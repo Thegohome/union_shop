@@ -340,12 +340,7 @@ class HomeScreen extends StatelessWidget {
                 color: Colors.grey[50],
                 padding: const EdgeInsets.all(24),
                 child: const Wrap(
-                  children: [
-                    Text(
-                      'Opening Hours',
-                      style: footerHeading
-                    )
-                  ],
+                  children: [Text('Opening Hours', style: footerHeading)],
                 )),
           ],
         ),
