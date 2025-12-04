@@ -6,7 +6,7 @@ void main() {
   group('Home Page Tests', () {
     group('F1: Hero Section Tests', () {
       testWidgets('hero section renders with responsive height and full width',
-          (tester) async {
+          (WidgetTester tester) async {
         await tester.pumpWidget(const UnionShopApp());
         await tester.pump();
 
@@ -19,7 +19,7 @@ void main() {
       });
 
       testWidgets('hero section background image displays with dark overlay',
-          (tester) async {
+          (WidgetTester tester) async {
         await tester.pumpWidget(const UnionShopApp());
         await tester.pump();
 
@@ -34,7 +34,7 @@ void main() {
 
       testWidgets(
           'hero title, subtitle, and BROWSE PRODUCTS button render with correct styling',
-          (tester) async {
+          (WidgetTester tester) async {
         await tester.pumpWidget(const UnionShopApp());
         await tester.pump();
 
@@ -55,7 +55,7 @@ void main() {
 
       testWidgets(
           'button uses custom background color (0xFF4d2963) with white text',
-          (tester) async {
+          (WidgetTester tester) async {
         await tester.pumpWidget(const UnionShopApp());
         await tester.pump();
 
@@ -69,7 +69,7 @@ void main() {
 
       testWidgets(
           'hero content remains visible and readable across screen widths',
-          (tester) async {
+          (WidgetTester tester) async {
         await tester.pumpWidget(const UnionShopApp());
         await tester.pump();
 
@@ -86,7 +86,8 @@ void main() {
     });
 
     group('F2: Navigation Bar Tests', () {
-      testWidgets('navbar renders with logo on left side', (tester) async {
+      testWidgets('navbar renders with logo on left side',
+          (WidgetTester tester) async {
         await tester.pumpWidget(const UnionShopApp());
         await tester.pump();
 
@@ -99,7 +100,8 @@ void main() {
         expect(gestureDetector, findsWidgets);
       });
 
-      testWidgets('navbar menu items render with correct text', (tester) async {
+      testWidgets('navbar menu items render with correct text',
+          (WidgetTester tester) async {
         await tester.pumpWidget(const UnionShopApp());
         await tester.pump();
 
@@ -112,7 +114,7 @@ void main() {
       });
 
       testWidgets('navbar Shop and Print Shack items display dropdown icons',
-          (tester) async {
+          (WidgetTester tester) async {
         await tester.pumpWidget(const UnionShopApp());
         await tester.pump();
 
@@ -125,7 +127,7 @@ void main() {
       });
 
       testWidgets('navbar displays search, account, and cart action icons',
-          (tester) async {
+          (WidgetTester tester) async {
         await tester.pumpWidget(const UnionShopApp());
         await tester.pump();
 
@@ -136,7 +138,7 @@ void main() {
       });
 
       testWidgets('navbar renders full width with Row layout structure',
-          (tester) async {
+          (WidgetTester tester) async {
         await tester.pumpWidget(const UnionShopApp());
         await tester.pump();
 
@@ -155,7 +157,7 @@ void main() {
     });
 
     group('Other Page Elements', () {
-      testWidgets('should display product cards', (tester) async {
+      testWidgets('should display product cards', (WidgetTester tester) async {
         await tester.pumpWidget(const UnionShopApp());
         await tester.pump();
 
@@ -172,7 +174,7 @@ void main() {
         expect(find.text('£25.00'), findsOneWidget);
       });
 
-      testWidgets('should display header icons', (tester) async {
+      testWidgets('should display header icons', (WidgetTester tester) async {
         await tester.pumpWidget(const UnionShopApp());
         await tester.pump();
 
@@ -182,7 +184,7 @@ void main() {
         expect(find.byIcon(Icons.menu), findsOneWidget);
       });
 
-      testWidgets('should display footer', (tester) async {
+      testWidgets('should display footer', (WidgetTester tester) async {
         await tester.pumpWidget(const UnionShopApp());
         await tester.pump();
 

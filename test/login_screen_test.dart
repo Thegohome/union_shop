@@ -6,7 +6,7 @@ void main() {
   group('LoginScreen', () {
     testWidgets(
         'should render with centered white container on neutral background',
-        (tester) async {
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
           home: LoginScreen(),
@@ -24,7 +24,8 @@ void main() {
       expect(find.byType(SingleChildScrollView), findsOneWidget);
     });
 
-    testWidgets('should display Union Shop logo at top', (tester) async {
+    testWidgets('should display Union Shop logo at top',
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
           home: LoginScreen(),
@@ -36,7 +37,7 @@ void main() {
     });
 
     testWidgets('should display Sign in heading with correct style',
-        (tester) async {
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
           home: LoginScreen(),
@@ -50,7 +51,7 @@ void main() {
       expect(headingFinder, findsOneWidget);
     });
 
-    testWidgets('should display subtitle text', (tester) async {
+    testWidgets('should display subtitle text', (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
           home: LoginScreen(),
@@ -64,7 +65,7 @@ void main() {
     });
 
     testWidgets('should display Sign in with PortShop button (blue/indigo)',
-        (tester) async {
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
           home: LoginScreen(),
@@ -78,7 +79,7 @@ void main() {
     });
 
     testWidgets('should display or divider between buttons and form',
-        (tester) async {
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
           home: LoginScreen(),
@@ -92,7 +93,7 @@ void main() {
     });
 
     testWidgets('should display email input field with placeholder',
-        (tester) async {
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
           home: LoginScreen(),
@@ -107,7 +108,7 @@ void main() {
     });
 
     testWidgets('should display Continue button (gray secondary)',
-        (tester) async {
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
           home: LoginScreen(),
@@ -122,7 +123,7 @@ void main() {
     });
 
     testWidgets('should have all buttons with placeholder callbacks',
-        (tester) async {
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
           home: LoginScreen(),
@@ -145,7 +146,8 @@ void main() {
       expect(find.byType(LoginScreen), findsOneWidget);
     });
 
-    testWidgets('should render layout responsively', (tester) async {
+    testWidgets('should render layout responsively',
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
           home: LoginScreen(),
@@ -163,7 +165,8 @@ void main() {
       expect(find.byType(SingleChildScrollView), findsOneWidget);
     });
 
-    testWidgets('should have correct component hierarchy', (tester) async {
+    testWidgets('should have correct component hierarchy',
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
           home: LoginScreen(),
@@ -184,7 +187,7 @@ void main() {
     });
 
     testWidgets('should display all text elements in correct order',
-        (tester) async {
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
           home: LoginScreen(),
@@ -200,7 +203,7 @@ void main() {
     });
 
     testWidgets('should have white form container with rounded corners',
-        (tester) async {
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
           home: LoginScreen(),
@@ -214,7 +217,8 @@ void main() {
       expect(find.byType(SingleChildScrollView), findsOneWidget);
     });
 
-    testWidgets('should handle text input in email field', (tester) async {
+    testWidgets('should handle text input in email field',
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
           home: LoginScreen(),
@@ -233,7 +237,8 @@ void main() {
       expect(find.text('test@example.com'), findsOneWidget);
     });
 
-    testWidgets('should have proper spacing between elements', (tester) async {
+    testWidgets('should have proper spacing between elements',
+        (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
           home: LoginScreen(),

@@ -20,7 +20,8 @@ void main() {
       expect(find.text('Description'), findsOneWidget);
     });
 
-    testWidgets('should display student instruction text', (tester) async {
+    testWidgets('should display student instruction text',
+        (WidgetTester tester) async {
       await tester.pumpWidget(createTestWidget());
       await tester.pump();
 
@@ -29,7 +30,7 @@ void main() {
       expect(find.text('Description'), findsOneWidget);
     });
 
-    testWidgets('should display header icons', (tester) async {
+    testWidgets('should display header icons', (WidgetTester tester) async {
       await tester.pumpWidget(createTestWidget());
       await tester.pump();
 
@@ -39,7 +40,7 @@ void main() {
       expect(find.byIcon(Icons.menu), findsOneWidget);
     });
 
-    testWidgets('should display footer', (tester) async {
+    testWidgets('should display footer', (WidgetTester tester) async {
       await tester.pumpWidget(createTestWidget());
       await tester.pump();
 

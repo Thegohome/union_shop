@@ -4,7 +4,7 @@ import 'package:union_shop/views/about_screen.dart';
 
 void main() {
   group('AboutScreen', () {
-    testWidgets('should display header', (tester) async {
+    testWidgets('should display header', (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
           home: AboutScreen(),
@@ -15,7 +15,7 @@ void main() {
       expect(find.text('About'), findsOneWidget);
     });
 
-    testWidgets('should display About Us heading', (tester) async {
+    testWidgets('should display About Us heading', (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
           home: AboutScreen(),
@@ -25,7 +25,7 @@ void main() {
       expect(find.text('About Us'), findsOneWidget);
     });
 
-    testWidgets('should display about text block', (tester) async {
+    testWidgets('should display about text block', (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
           home: AboutScreen(),
@@ -43,7 +43,7 @@ void main() {
       );
     });
 
-    testWidgets('should display footer', (tester) async {
+    testWidgets('should display footer', (WidgetTester tester) async {
       await tester.pumpWidget(
         const MaterialApp(
           home: AboutScreen(),
