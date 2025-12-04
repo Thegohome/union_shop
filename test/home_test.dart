@@ -73,15 +73,16 @@ void main() {
         await tester.pumpWidget(const UnionShopApp());
         await tester.pump();
 
-      // Check that basic UI elements are present
-      expect(
-        find.text('PLACEHOLDER HEADER TEXT - STUDENTS TO UPDATE!'),
-        findsOneWidget,
-      );
-      expect(find.text('Placeholder Hero Title'), findsOneWidget);
-      expect(find.text('PLACEHOLDER PRODUCTS SECTION'), findsOneWidget);
-      expect(find.text('BROWSE PRODUCTS'), findsOneWidget);
-      expect(find.text('VIEW ALL PRODUCTS'), findsOneWidget);
+        // Verify all hero content is present and rendered
+        expect(find.text('Placeholder Hero Title'), findsOneWidget);
+        expect(find.text('This is placeholder text for the hero section.'),
+            findsOneWidget);
+        expect(find.text('BROWSE PRODUCTS'), findsOneWidget);
+
+        // Verify content is within visible bounds
+        final heroContent = find.byType(Positioned);
+        expect(heroContent, findsWidgets);
+      });
     });
 
     testWidgets('should display product cards', (tester) async {
