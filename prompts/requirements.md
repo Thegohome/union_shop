@@ -148,18 +148,18 @@ Outcome: Users see a professional footer with company info, links, and branding 
 ### Success Criteria
 
 #### Tests:
-- [ ] Footer renders with full width and correct height at bottom of page
+- [x] Footer renders with full width and correct height at bottom of page
 - [ ] Footer displays opening hours, links and email subscription entry box
 
 #### UI:
 - [ ] Footer positioned at bottom of home page
-- [ ] Links use underline or hover effect to indicate interactivity
+- [x] Links use underline or hover effect to indicate interactivity
 
 #### Internal Logic (APIs):
-- [ ] Footer uses Column and Row widgets for organized section layout
-- [ ] Links implemented as TextButton with placeholder callbacks
-- [ ] Footer responsive with single column on mobile and multi-column on desktop
-- [ ] Footer text uses consistent font sizes and colors from app_styles theme
+- [x] Footer uses Column and Row widgets for organized section layout
+- [x] Links implemented as TextButton with placeholder callbacks
+- [x] Footer responsive with single column on mobile and multi-column on desktop
+- [x] Footer text uses consistent font sizes and colors from app_styles theme
 
 #### Business Logic:
 N/A
@@ -183,12 +183,12 @@ and readable without excessive scrolling, showing key links in a compact format.
 
 ### Implementation Plan
 
-- [ ] 1. Create footer container with full width and fixed/consistent height
-- [ ] 2. Add opening hours section + help and info section
-- [ ] 3. Add email entry box for 'Latest Offers' section
+- [x] 1. Create footer container with full width and fixed/consistent height
+- [x] 2. Add opening hours section + help and info section
+- [x] 3. Add email entry box for 'Latest Offers' section
 - [ ] 4. Add social media links section with icon buttons and payment providers
 - [ ] 5. Add copyright info 
-- [ ] 6. Make footer responsive with different layouts for mobile and desktop viewports
+- [x] 6. Make footer responsive with different layouts for mobile and desktop viewports
 - [ ] 7. Write widget tests validating footer content, layout, and responsiveness
 
 ## F4: Product Grid Section
