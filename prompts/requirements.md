@@ -1,5 +1,13 @@
 # Document Usage
 
+This document provides detailed specifications for individual features from the `features.md` roadmap. Each feature requirement outlines what must be delivered (Success Criteria), how it should be implemented (Implementation Plan), and who should execute it (Ownership).
+
+**Purpose**: Bridge the gap between high-level feature descriptions and actionable development tasks. Each requirements document maps 1:1 to a feature in the feature list, allowing for granular tracking and implementation guidance.
+
+**Structure**: Success Criteria describe the *what* (Tests, UI, Internal Logic); Implementation Plan describes the *how* with atomic steps. Avoid redundancy—criteria and implementation should complement, not repeat each other. Sections marked `N/A` indicate not applicable at that tier (e.g., Business Logic for static features). Headings are decremented for proper document nesting as sub-sections.
+
+**Usage**: LLMs reference Success Criteria to verify completion; Implementation Plan provides procedural guidance. Use as a specification template for each feature requiring detailed requirements documentation.
+
 # Features
 
 ## F1: Static Homepage
