@@ -85,9 +85,10 @@ void main() {
       });
     });
 
-    testWidgets('should display product cards', (tester) async {
-      await tester.pumpWidget(const UnionShopApp());
-      await tester.pump();
+    group('Other Page Elements', () {
+      testWidgets('should display product cards', (tester) async {
+        await tester.pumpWidget(const UnionShopApp());
+        await tester.pump();
 
       // Check that product cards are displayed
       expect(find.text('Placeholder Product 1'), findsOneWidget);
