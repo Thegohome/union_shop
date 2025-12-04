@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+// Colors
+
+const Color portsmouthPurple = Color(0xFF5856D6);
+
 // Top Banner
 const TextStyle bannerHeading = TextStyle(
   color: Colors.white,
@@ -40,23 +44,17 @@ const TextStyle productsSectionHeader = TextStyle(
 );
 
 // Footer
-const TextStyle footerHeading = TextStyle(
-  fontSize: 16,
-  fontWeight: FontWeight.bold,
-  color: Colors.black
-);
+const TextStyle footerHeading =
+    TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black);
 
 const TextStyle footerOpeningHoursText = TextStyle(
-  fontSize: 14, 
-  fontWeight: FontWeight.bold,
-  fontStyle: FontStyle.italic,
-  color: Colors.black
-);
+    fontSize: 14,
+    fontWeight: FontWeight.bold,
+    fontStyle: FontStyle.italic,
+    color: Colors.black);
 
-const TextStyle footerTextButtonText = TextStyle(
-  fontSize: 16,
-  color: Colors.black
-);
+const TextStyle footerTextButtonText =
+    TextStyle(fontSize: 16, color: Colors.black);
 
 // Regular Page
 const TextStyle pageTitle = TextStyle(
@@ -66,7 +64,4 @@ const TextStyle pageTitle = TextStyle(
   height: 1.2,
 );
 
-const TextStyle pageText = TextStyle(
-  fontSize: 16,
-  color: Colors.black
-);
+const TextStyle pageText = TextStyle(fontSize: 16, color: Colors.black);
