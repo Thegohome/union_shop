@@ -25,23 +25,23 @@ Outcome: Users see an engaging hero section on homepage with background image, p
 ### Success Criteria
 
 #### Tests:
-- [ ] Hero section renders with responsive height (40% of viewport) and full width
-- [ ] Hero section background image displays with dark overlay applied
-- [ ] Hero title, subtitle, and "BROWSE PRODUCTS" button all render with correct styling
-- [ ] Button uses custom background color (0xFF4d2963) with white text and no border radius
-- [ ] Hero section maintains proper proportions across mobile and desktop screen sizes
+- [x] Hero section renders with responsive height (40% of viewport) and full width
+- [x] Hero section background image displays with dark overlay applied
+- [x] Hero title, subtitle, and "BROWSE PRODUCTS" button all render with correct styling
+- [x] Button uses custom background color (0xFF4d2963) with white text and no border radius
+- [x] Hero section maintains proper proportions across mobile and desktop screen sizes
 
 #### UI:
-- [ ] Hero section positioned below main header with full-width background image
-- [ ] Hero height is 40% of viewport height for responsive mobile/desktop scaling
-- [ ] All text is white, centered, and properly spaced (title 32px, subtitle 20px)
-- [ ] Semi-transparent black overlay (0.7 alpha) applied over background image
-- [ ] Call-to-action button prominently displayed below subtitle text
+- [x] Hero section positioned below main header with full-width background image
+- [x] Hero height is 40% of viewport height for responsive mobile/desktop scaling
+- [x] All text is white, centered, and properly spaced (title 32px, subtitle 20px)
+- [x] Semi-transparent black overlay (0.7 alpha) applied over background image
+- [x] Call-to-action button prominently displayed below subtitle text
 
 #### Internal Logic (APIs):
-- [ ] Hero section uses Stack with Positioned layout for background and overlay
-- [ ] Background image implemented with NetworkImage and BoxDecoration
-- [ ] Button connected to placeholderCallbackForButtons method
+- [x] Hero section uses Stack with Positioned layout for background and overlay
+- [x] Background image implemented with NetworkImage and BoxDecoration
+- [x] Button connected to placeholderCallbackForButtons method
 
 #### Business Logic:
 N/A
