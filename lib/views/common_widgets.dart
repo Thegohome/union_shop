@@ -348,7 +348,8 @@ class AppFooter extends StatelessWidget {
           SizedBox(height: 16),
           Text('Search', style: footerTextButtonText),
           SizedBox(height: 8),
-          Text('Terms & Conditions of Sale Policy', style: footerTextButtonText),
+          Text('Terms & Conditions of Sale Policy',
+              style: footerTextButtonText),
         ],
       ),
     );
@@ -367,7 +368,8 @@ class AppFooter extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     TextFormField(
-                      decoration: const InputDecoration(hintText: 'Email Address'),
+                      decoration:
+                          const InputDecoration(hintText: 'Email Address'),
                     ),
                     const SizedBox(height: 12),
                     Center(
@@ -382,7 +384,8 @@ class AppFooter extends StatelessWidget {
                   children: [
                     Expanded(
                       child: TextFormField(
-                        decoration: const InputDecoration(hintText: 'Email Address'),
+                        decoration:
+                            const InputDecoration(hintText: 'Email Address'),
                       ),
                     ),
                     const SizedBox(width: 12),
