@@ -327,7 +327,7 @@ from a dedicated About page accessible via the navigation menu.
 --
 Owner: @student
 Priority: Medium
-Status: Planned
+Status: Complete
 --
 Summary: Build static login page with centered form box and authentication options
 --
@@ -337,33 +337,33 @@ Outcome: Users see a clean, centered login interface with email field and extern
 ### Success Criteria
 
 #### Tests:
-- [ ] Login page renders with centered white container on neutral background
-- [ ] Page displays "Sign in" heading with descriptive subtitle
-- [ ] Page displays "Sign in with External Provider" button (blue/indigo)
-- [ ] Page displays email input field with placeholder text
-- [ ] Page displays "Continue" button (secondary/gray styling)
-- [ ] Divider text "or" displays between button and form fields
-- [ ] Union Shop logo displays at top of form
+- [x] Login page renders with centered white container on neutral background
+- [x] Page displays "Sign in" heading with descriptive subtitle
+- [x] Page displays "Sign in with PortShop" button (blue/indigo)
+- [x] Page displays email input field with placeholder text
+- [x] Page displays "Continue" button (secondary/gray styling)
+- [x] Divider text "or" displays between button and form fields
+- [x] Union Shop logo displays at top of form
 
 #### UI:
-- [ ] Centered white rounded container (box styling, not full screen)
-- [ ] Union Shop logo positioned at top of form
-- [ ] "Sign in" heading with subtitle "Choose how you'd like to sign in"
-- [ ] "Sign in with External Provider" button in blue/indigo, full width
-- [ ] "or" divider text between button and form section
-- [ ] Email input field with "Email" placeholder
-- [ ] "Continue" button in secondary gray styling, full width
-- [ ] Responsive layout centers content on desktop/tablet, adapts on mobile
+- [x] Centered white rounded container (box styling, not full screen)
+- [x] Union Shop logo positioned at top of form
+- [x] "Sign in" heading with subtitle "Choose how you'd like to sign in"
+- [x] "Sign in with PortShop" button in blue/indigo, full width
+- [x] "or" divider text between button and form section
+- [x] Email input field with "Email" placeholder
+- [x] "Continue" button in secondary gray styling, full width
+- [x] Responsive layout centers content on desktop/tablet, adapts on mobile
 
 #### Internal Logic (APIs):
-- [ ] Page implemented as StatelessWidget with Column layout
-- [ ] Uses Scaffold with light gray or neutral background
-- [ ] Centered Container with white background for form box
-- [ ] TextField for email input with placeholder and no error state
-- [ ] ElevatedButton for "Sign in with External Provider" (blue/indigo)
-- [ ] ElevatedButton or TextButton for "Continue" (gray/secondary)
-- [ ] All buttons have placeholder onPressed callbacks
-- [ ] Form wrapped in SingleChildScrollView for mobile responsiveness
+- [x] Page implemented as StatelessWidget with Column layout
+- [x] Uses Scaffold with light gray or neutral background
+- [x] Centered Container with white background for form box
+- [x] TextField for email input with placeholder and no error state
+- [x] ElevatedButton for "Sign in with PortShop" (blue/indigo)
+- [x] ElevatedButton for "Continue" (gray/secondary)
+- [x] All buttons have placeholder onPressed callbacks
+- [x] Form wrapped in SingleChildScrollView for mobile responsiveness
 
 #### Business Logic:
 N/A
@@ -387,16 +387,16 @@ how to sign in without overwhelming me with options.
 
 ### Implementation Plan
 
-- [ ] 1. Create LoginScreen widget in views/login_screen.dart with Scaffold and neutral background
-- [ ] 2. Add centered white Container for form box (padding, border radius)
-- [ ] 3. Add Union Shop logo image at top of form
-- [ ] 4. Add "Sign in" heading with subtitle text below logo
-- [ ] 5. Add blue/indigo "Sign in with External Provider" ElevatedButton (full width)
-- [ ] 6. Add "or" divider text between button and form fields
-- [ ] 7. Add email TextField with placeholder text and no validation styling
-- [ ] 8. Add gray "Continue" ElevatedButton (full width) with placeholder callback
-- [ ] 9. Add route /login in main.dart for navigation
-- [ ] 10. Write widget tests validating logo, heading, buttons, input field, and layout
+- [x] 1. Create LoginScreen widget in views/login_screen.dart with Scaffold and neutral background
+- [x] 2. Add centered white Container for form box (padding, border radius)
+- [x] 3. Add Union Shop logo image at top of form
+- [x] 4. Add "Sign in" heading with subtitle text below logo
+- [x] 5. Add blue/indigo "Sign in with PortShop" ElevatedButton (full width)
+- [x] 6. Add "or" divider text between button and form fields
+- [x] 7. Add email TextField with placeholder text and no validation styling
+- [x] 8. Add gray "Continue" ElevatedButton (full width) with placeholder callback
+- [x] 9. Add route /login in main.dart for navigation
+- [x] 10. Write widget tests validating logo, heading, buttons, input field, and layout
 
 ## F7: Print Shack About Page
 
