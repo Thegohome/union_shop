@@ -77,6 +77,30 @@ class OpeningHourTextLine extends StatelessWidget {
   }
 }
 
+class HelpInfoButton extends StatelessWidget {
+  final String text;
+  final VoidCallback onPressed;
+  final double bottomPadding;
+
+  const HelpInfoButton(
+    this.text, {
+    required this.onPressed,
+    this.bottomPadding = 8,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(bottom: bottomPadding),
+      child: TextButton(
+        onPressed: onPressed,
+        child: Text(text, style: footerTextButtonText),
+      ),
+    );
+  }
+}
+
 class AppHeader extends StatelessWidget {
   const AppHeader({super.key});
 
@@ -339,17 +363,21 @@ class AppFooter extends StatelessWidget {
   }
 
   Widget _buildHelpSection() {
-    return const SizedBox(
+    return SizedBox(
       width: 300,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Help and Information', style: footerHeading),
-          SizedBox(height: 16),
-          Text('Search', style: footerTextButtonText),
-          SizedBox(height: 8),
-          Text('Terms & Conditions of Sale Policy',
-              style: footerTextButtonText),
+          const Text('Help and Information', style: footerHeading),
+          const SizedBox(height: 16),
+          HelpInfoButton(
+            'Search',
+            onPressed: _placeholderCallback,
+          ),
+          HelpInfoButton(
+            'Terms & Conditions of Sale Policy',
+            onPressed: _placeholderCallback,
+          ),
         ],
       ),
     );
