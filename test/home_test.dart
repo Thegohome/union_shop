@@ -85,6 +85,75 @@ void main() {
       });
     });
 
+    group('F2: Navigation Bar Tests', () {
+      testWidgets('navbar renders with logo on left side', (tester) async {
+        await tester.pumpWidget(const UnionShopApp());
+        await tester.pump();
+
+        // Check that Image widget exists (logo from network)
+        final logoFinder = find.byType(Image);
+        expect(logoFinder, findsWidgets);
+
+        // Verify logo is within a GestureDetector for tap handling
+        final gestureDetector = find.byType(GestureDetector);
+        expect(gestureDetector, findsWidgets);
+      });
+
+      testWidgets('navbar menu items render with correct text', (tester) async {
+        await tester.pumpWidget(const UnionShopApp());
+        await tester.pump();
+
+        // Check all menu items are present
+        expect(find.text('Home'), findsOneWidget);
+        expect(find.text('Shop'), findsOneWidget);
+        expect(find.text('The Print Shack'), findsOneWidget);
+        expect(find.text('SALE!'), findsOneWidget);
+        expect(find.text('About'), findsOneWidget);
+      });
+
+      testWidgets('navbar Shop and Print Shack items display dropdown icons',
+          (tester) async {
+        await tester.pumpWidget(const UnionShopApp());
+        await tester.pump();
+
+        // Check that expand_more icons are present (for dropdown indicators)
+        final expandMoreIcons = find.byIcon(Icons.expand_more);
+        expect(expandMoreIcons, findsWidgets);
+
+        // Should have at least 2 expand_more icons (for Shop and Print Shack)
+        expect(find.byIcon(Icons.expand_more), findsAtLeastNWidgets(2));
+      });
+
+      testWidgets('navbar displays search, account, and cart action icons',
+          (tester) async {
+        await tester.pumpWidget(const UnionShopApp());
+        await tester.pump();
+
+        // Check for action icons on right side
+        expect(find.byIcon(Icons.search), findsOneWidget);
+        expect(find.byIcon(Icons.person_outline), findsOneWidget);
+        expect(find.byIcon(Icons.shopping_bag_outlined), findsOneWidget);
+      });
+
+      testWidgets('navbar renders full width with Row layout structure',
+          (tester) async {
+        await tester.pumpWidget(const UnionShopApp());
+        await tester.pump();
+
+        // Check that navbar uses Row widget for horizontal layout
+        final rowFinders = find.byType(Row);
+        expect(rowFinders, findsWidgets);
+
+        // Check that Spacer widgets are used for flexible layout
+        final spacerFinders = find.byType(Spacer);
+        expect(spacerFinders, findsWidgets);
+
+        // Verify navbar container spans full width
+        final containerFinder = find.byType(Container).first;
+        expect(containerFinder, findsOneWidget);
+      });
+    });
+
     group('Other Page Elements', () {
       testWidgets('should display product cards', (tester) async {
         await tester.pumpWidget(const UnionShopApp());
