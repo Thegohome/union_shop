@@ -280,73 +280,120 @@ class AppFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isMobileView = screenWidth < 750;
+
     return Container(
-        width: double.infinity,
-        color: Colors.grey[50],
-        padding: const EdgeInsets.all(24),
-        child: Column(
-          children: [
-            Center(
-              child: Wrap(children: [
-                const SizedBox(
-                    width: 300,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Opening Hours', style: footerHeading),
-                        SizedBox(height: 16),
-                        OpeningHourTextLine('❄️ Winter Break Closure Dates ❄️'),
-                        OpeningHourTextLine('Closing 4pm 19/12/2025'),
-                        OpeningHourTextLine('Reopening 10am 05/01/2026'),
-                        OpeningHourTextLine(
-                            'Last post date: 12pm on 18/12/2025'),
-                        OpeningHourTextLine('------------------------'),
-                        OpeningHourTextLine('(Term Time)'),
-                        OpeningHourTextLine('Monday - Friday 10am - 4pm'),
-                        OpeningHourTextLine(
-                            '(Outside of Term Time / Consolidation Weeks)'),
-                        OpeningHourTextLine('Monday - Friday 10am - 3pm'),
-                        OpeningHourTextLine('Purchase online 24/7'),
-                      ],
-                    )),
-                const SizedBox(
-                    width: 300,
-                    child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text('Help and Information', style: footerHeading),
-                          SizedBox(height: 16),
-                          Text('Search', style: footerTextButtonText),
-                          SizedBox(height: 8),
-                          Text('Terms & Conditions of Sale Policy',
-                              style: footerTextButtonText),
-                        ])),
-                SizedBox(
-                    width: 300,
-                    child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text('Latest Offers', style: footerHeading),
-                          const SizedBox(height: 16),
-                          Row(
-                            children: [
-                              SizedBox(
-                                width: 175,
-                                child: TextFormField(
-                                  decoration: const InputDecoration(
-                                      hintText: 'Email Address'),
-                                ),
-                              ),
-                              ElevatedButton(
-                                  onPressed: _placeholderCallback,
-                                  child: const Text('SUBSCRIBE'))
-                            ],
-                          )
-                        ]))
-              ]),
-            ),
-            const Divider(height: 5, thickness: 1, color: Colors.black)
-          ],
-        ));
+      width: double.infinity,
+      color: Colors.grey[50],
+      padding: const EdgeInsets.all(24),
+      child: Column(
+        children: [
+          Center(
+            child: isMobileView
+                ? Column(
+                    children: [
+                      _buildOpeningHoursSection(),
+                      const SizedBox(height: 24),
+                      _buildHelpSection(),
+                      const SizedBox(height: 24),
+                      _buildLatestOffersSection(isMobileView),
+                    ],
+                  )
+                : Wrap(
+                    spacing: 24,
+                    children: [
+                      _buildOpeningHoursSection(),
+                      _buildHelpSection(),
+                      _buildLatestOffersSection(isMobileView),
+                    ],
+                  ),
+          ),
+          const Divider(height: 24, thickness: 1, color: Colors.black)
+        ],
+      ),
+    );
+  }
+
+  Widget _buildOpeningHoursSection() {
+    return const SizedBox(
+      width: 300,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text('Opening Hours', style: footerHeading),
+          SizedBox(height: 16),
+          OpeningHourTextLine('❄️ Winter Break Closure Dates ❄️'),
+          OpeningHourTextLine('Closing 4pm 19/12/2025'),
+          OpeningHourTextLine('Reopening 10am 05/01/2026'),
+          OpeningHourTextLine('Last post date: 12pm on 18/12/2025'),
+          OpeningHourTextLine('------------------------'),
+          OpeningHourTextLine('(Term Time)'),
+          OpeningHourTextLine('Monday - Friday 10am - 4pm'),
+          OpeningHourTextLine('(Outside of Term Time / Consolidation Weeks)'),
+          OpeningHourTextLine('Monday - Friday 10am - 3pm'),
+          OpeningHourTextLine('Purchase online 24/7'),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildHelpSection() {
+    return const SizedBox(
+      width: 300,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text('Help and Information', style: footerHeading),
+          SizedBox(height: 16),
+          Text('Search', style: footerTextButtonText),
+          SizedBox(height: 8),
+          Text('Terms & Conditions of Sale Policy', style: footerTextButtonText),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildLatestOffersSection(bool isMobileView) {
+    return SizedBox(
+      width: 300,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text('Latest Offers', style: footerHeading),
+          const SizedBox(height: 16),
+          isMobileView
+              ? Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    TextFormField(
+                      decoration: const InputDecoration(hintText: 'Email Address'),
+                    ),
+                    const SizedBox(height: 12),
+                    Center(
+                      child: ElevatedButton(
+                        onPressed: _placeholderCallback,
+                        child: const Text('SUBSCRIBE'),
+                      ),
+                    )
+                  ],
+                )
+              : Row(
+                  children: [
+                    Expanded(
+                      child: TextFormField(
+                        decoration: const InputDecoration(hintText: 'Email Address'),
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    ElevatedButton(
+                      onPressed: _placeholderCallback,
+                      child: const Text('SUBSCRIBE'),
+                    )
+                  ],
+                ),
+        ],
+      ),
+    );
   }
 }
