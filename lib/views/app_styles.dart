@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 // Colors
 
-const Color portsmouthPurple = Color(0xFF5856D6);
+const Color portsmouthPurple = Color(0xFF4d2963);
 
 // Top Banner
 const TextStyle bannerHeading = TextStyle(
