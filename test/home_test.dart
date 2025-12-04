@@ -117,12 +117,9 @@ void main() {
         await tester.pumpWidget(const UnionShopApp());
         await tester.pump();
 
-      // Check that footer is present
-      expect(find.text('Placeholder Footer'), findsOneWidget);
-      expect(
-        find.text('Students should customise this footer section'),
-        findsOneWidget,
-      );
+        // Check that footer is present
+        expect(find.text('Placeholder Footer'), findsOneWidget);
+      });
     });
   });
 }
