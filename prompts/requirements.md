@@ -149,22 +149,15 @@ Outcome: Users see a professional footer with company info, links, and branding 
 
 #### Tests:
 - [ ] Footer renders with full width and correct height at bottom of page
-- [ ] Footer displays company name, contact information, and social media links
-- [ ] Footer contains navigation links to key pages (About, Collections, Shop)
-- [ ] Footer background color and text styling match app design system
-- [ ] Footer content is readable and properly spaced across mobile and desktop views
+- [ ] Footer displays opening hours, links and email subscription entry box
 
 #### UI:
-- [ ] Footer positioned at bottom of all pages with consistent styling
-- [ ] Company information (name, address, phone, email) displayed prominently
-- [ ] Navigation links organized in sections (Shop, Company, Support, Social)
+- [ ] Footer positioned at bottom of home page
 - [ ] Links use underline or hover effect to indicate interactivity
-- [ ] Footer has contrasting background color and sufficient whitespace for readability
 
 #### Internal Logic (APIs):
-- [ ] Footer implemented as reusable widget component across multiple pages
 - [ ] Footer uses Column and Row widgets for organized section layout
-- [ ] Links implemented as TextButton or InkWell widgets with placeholder callbacks
+- [ ] Links implemented as TextButton with placeholder callbacks
 - [ ] Footer responsive with single column on mobile and multi-column on desktop
 - [ ] Footer text uses consistent font sizes and colors from app_styles theme
 
@@ -178,7 +171,7 @@ N/A
 
 #### User 1
 ```
-As a customer, I want to find company contact information and links to important 
+As a customer, I want to find information and links to important 
 pages in the footer so I can easily reach out or navigate to company information.
 ```
 
@@ -191,10 +184,10 @@ and readable without excessive scrolling, showing key links in a compact format.
 ### Implementation Plan
 
 - [ ] 1. Create footer container with full width and fixed/consistent height
-- [ ] 2. Add company information section with name, address, phone, and email
-- [ ] 3. Implement navigation section with links to Shop, About, Print Shack pages
-- [ ] 4. Add social media links section with icon buttons for major platforms
-- [ ] 5. Apply styling with background color, borders, and appropriate text colors
+- [ ] 2. Add opening hours section + help and info section
+- [ ] 3. Add email entry box for 'Latest Offers' section
+- [ ] 4. Add social media links section with icon buttons and payment providers
+- [ ] 5. Add copyright info 
 - [ ] 6. Make footer responsive with different layouts for mobile and desktop viewports
 - [ ] 7. Write widget tests validating footer content, layout, and responsiveness
 
