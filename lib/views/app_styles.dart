@@ -57,3 +57,11 @@ const TextStyle footerTextButtonText = TextStyle(
   fontSize: 16,
   color: Colors.black
 );
+
+// Regular Page Title
+const TextStyle pageTitle = TextStyle(
+  fontSize: 32,
+  fontWeight: FontWeight.bold,
+  color: Colors.black,
+  height: 1.2,
+);
