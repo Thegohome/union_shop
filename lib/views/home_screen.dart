@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:union_shop/views/app_styles.dart';
 import 'package:union_shop/views/common_widgets.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -369,12 +370,8 @@ class HomeScreen extends StatelessWidget {
                 child: const Wrap(
                   children: [
                     Text(
-                      'Placeholder Footer',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      'Opening Hours',
+                      style: footerHeading
                     )
                   ],
                 )),
