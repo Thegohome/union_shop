@@ -213,56 +213,20 @@ class AppHeader extends StatelessWidget {
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        IconButton(
-                          icon: const Icon(
-                            Icons.search,
-                            size: 18,
-                            color: Colors.grey,
-                          ),
-                          padding: const EdgeInsets.all(8),
-                          constraints: const BoxConstraints(
-                            minWidth: 32,
-                            minHeight: 32,
-                          ),
+                        HeaderIconButton(
+                          icon: Icons.search,
                           onPressed: _placeholderCallback,
                         ),
-                        IconButton(
-                          icon: const Icon(
-                            Icons.person_outline,
-                            size: 18,
-                            color: Colors.grey,
-                          ),
-                          padding: const EdgeInsets.all(8),
-                          constraints: const BoxConstraints(
-                            minWidth: 32,
-                            minHeight: 32,
-                          ),
+                        HeaderIconButton(
+                          icon: Icons.person_outline,
                           onPressed: _placeholderCallback,
                         ),
-                        IconButton(
-                          icon: const Icon(
-                            Icons.shopping_bag_outlined,
-                            size: 18,
-                            color: Colors.grey,
-                          ),
-                          padding: const EdgeInsets.all(8),
-                          constraints: const BoxConstraints(
-                            minWidth: 32,
-                            minHeight: 32,
-                          ),
+                        HeaderIconButton(
+                          icon: Icons.shopping_bag_outlined,
                           onPressed: _placeholderCallback,
                         ),
-                        IconButton(
-                          icon: const Icon(
-                            Icons.menu,
-                            size: 18,
-                            color: Colors.grey,
-                          ),
-                          padding: const EdgeInsets.all(8),
-                          constraints: const BoxConstraints(
-                            minWidth: 32,
-                            minHeight: 32,
-                          ),
+                        HeaderIconButton(
+                          icon: Icons.menu,
                           onPressed: _placeholderCallback,
                         ),
                       ],
@@ -274,6 +238,34 @@ class AppHeader extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class HeaderIconButton extends StatelessWidget {
+  final IconData icon;
+  final VoidCallback onPressed;
+
+  const HeaderIconButton({
+    required this.icon,
+    required this.onPressed,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return IconButton(
+      icon: Icon(
+        icon,
+        size: 18,
+        color: Colors.grey,
+      ),
+      padding: const EdgeInsets.all(8),
+      constraints: const BoxConstraints(
+        minWidth: 32,
+        minHeight: 32,
+      ),
+      onPressed: onPressed,
     );
   }
 }
