@@ -142,66 +142,31 @@ class AppHeader extends StatelessWidget {
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          TextButton(
+                          NavMenuItem(
+                            text: 'Home',
                             onPressed: _placeholderCallback,
-                            child: const Text(
-                              'Home',
-                              style: navbarMenuItem,
-                            ),
                           ),
                           const SizedBox(width: 24),
-                          TextButton(
+                          NavMenuItem(
+                            text: 'Shop',
                             onPressed: _placeholderCallback,
-                            child: const Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Text(
-                                  'Shop',
-                                  style: navbarMenuItem,
-                                ),
-                                SizedBox(width: 8),
-                                Icon(
-                                  Icons.expand_more,
-                                  size: 18,
-                                  color: Colors.black,
-                                ),
-                              ],
-                            ),
+                            icon: Icons.expand_more,
                           ),
                           const SizedBox(width: 24),
-                          TextButton(
+                          NavMenuItem(
+                            text: 'The Print Shack',
                             onPressed: _placeholderCallback,
-                            child: const Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Text(
-                                  'The Print Shack',
-                                  style: navbarMenuItem,
-                                ),
-                                SizedBox(width: 8),
-                                Icon(
-                                  Icons.expand_more,
-                                  size: 18,
-                                  color: Colors.black,
-                                ),
-                              ],
-                            ),
+                            icon: Icons.expand_more,
                           ),
                           const SizedBox(width: 24),
-                          TextButton(
+                          NavMenuItem(
+                            text: 'SALE!',
                             onPressed: _placeholderCallback,
-                            child: const Text(
-                              'SALE!',
-                              style: navbarMenuItem,
-                            ),
                           ),
                           const SizedBox(width: 24),
-                          TextButton(
+                          NavMenuItem(
+                            text: 'About',
                             onPressed: _placeholderCallback,
-                            child: const Text(
-                              'About',
-                              style: navbarMenuItem,
-                            ),
                           ),
                         ],
                       ),
@@ -236,6 +201,42 @@ class AppHeader extends StatelessWidget {
               ),
             ),
           ),
+        ],
+      ),
+    );
+  }
+}
+
+class NavMenuItem extends StatelessWidget {
+  final String text;
+  final VoidCallback onPressed;
+  final IconData? icon;
+  final double iconPadding;
+
+  const NavMenuItem({
+    required this.text,
+    required this.onPressed,
+    this.icon,
+    this.iconPadding = 8,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: onPressed,
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(text, style: navbarMenuItem),
+          if (icon != null) ...[
+            SizedBox(width: iconPadding),
+            Icon(
+              icon,
+              size: 18,
+              color: Colors.black,
+            ),
+          ],
         ],
       ),
     );
