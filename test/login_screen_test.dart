@@ -4,7 +4,8 @@ import 'package:union_shop/views/login_screen.dart';
 
 void main() {
   group('LoginScreen', () {
-    testWidgets('should render with centered white container on neutral background',
+    testWidgets(
+        'should render with centered white container on neutral background',
         (tester) async {
       await tester.pumpWidget(
         const MaterialApp(
@@ -173,7 +174,8 @@ void main() {
       expect(find.byType(Scaffold), findsOneWidget);
       expect(find.byType(SingleChildScrollView), findsOneWidget);
       expect(find.byType(Center), findsWidgets);
-      expect(find.byType(Padding), findsWidgets); // Multiple Paddings for spacing
+      expect(
+          find.byType(Padding), findsWidgets); // Multiple Paddings for spacing
       expect(find.byType(Container), findsWidgets);
       expect(find.byType(Column), findsWidgets);
       expect(find.byType(ElevatedButton), findsWidgets);
@@ -231,8 +233,7 @@ void main() {
       expect(find.text('test@example.com'), findsOneWidget);
     });
 
-    testWidgets('should have proper spacing between elements',
-        (tester) async {
+    testWidgets('should have proper spacing between elements', (tester) async {
       await tester.pumpWidget(
         const MaterialApp(
           home: LoginScreen(),
