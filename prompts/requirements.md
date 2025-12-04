@@ -262,3 +262,69 @@ to single column layout so I can easily view and tap on products.
 - [ ] 5. Implement responsive behavior with different column counts per viewport
 - [ ] 6. Add "PRODUCTS SECTION" header text above grid with consistent styling
 - [ ] 7. Write widget tests validating grid layout, card rendering, and responsiveness
+
+## F5: About Us Page
+
+--
+Owner: @student
+Priority: Medium
+Status: Planned
+--
+Summary: Create About Us page with static company information and branding content
+--
+Outcome: Users see company background, mission, and branding information on dedicated About page
+--
+
+### Success Criteria
+
+#### Tests:
+- [ ] About Us page renders with full-width content and proper heading hierarchy
+- [ ] Page displays company name, mission statement, and company description
+- [ ] Page includes company values, history, or team information sections
+- [ ] Content is readable with appropriate font sizes and line spacing
+- [ ] Page layout is responsive and readable on mobile and desktop viewports
+
+#### UI:
+- [ ] Page has clear title/heading "About Union Shop" at top with larger font size
+- [ ] Company mission statement displayed prominently below heading
+- [ ] Sections for company history, values, and team information
+- [ ] Images or graphics included to enhance visual interest and brand identity
+- [ ] Content uses consistent typography and color scheme from app design system
+
+#### Internal Logic (APIs):
+- [ ] Page implemented as StatelessWidget with Column layout for vertical content flow
+- [ ] Uses appropriate spacing widgets (SizedBox, Padding) for consistent margins
+- [ ] Text uses TextStyle from app_styles for consistent typography
+- [ ] Images implemented with Image.network and errorBuilder fallbacks
+- [ ] Page wrapped in Scaffold with AppBar or custom header for navigation
+
+#### Business Logic:
+N/A
+
+### Dependencies:
+N/A
+
+### Testimonies
+
+#### User 1
+```
+As a new customer, I want to learn about the Union Shop company, its mission, 
+and values so I can understand what I'm supporting with my purchase.
+```
+
+#### User 2
+```
+As someone considering a purchase, I want to see the company's background and 
+history to build trust and confidence in the brand.
+```
+
+### Implementation Plan
+
+- [ ] 1. Create new AboutScreen widget and route in main.dart
+- [ ] 2. Add page heading "About Union Shop" with appropriate text styling
+- [ ] 3. Add company mission statement section with descriptive text content
+- [ ] 4. Add company history section with background information paragraphs
+- [ ] 5. Add company values section highlighting key principles or attributes
+- [ ] 6. Ensure responsive layout that works on mobile and desktop viewports
+- [ ] 7. Write widget tests validating page content, layout, and navigation
+- [ ] 7. Write widget tests validating page content, layout, and navigation
