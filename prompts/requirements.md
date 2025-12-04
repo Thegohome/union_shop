@@ -197,3 +197,68 @@ and readable without excessive scrolling, showing key links in a compact format.
 - [ ] 5. Apply styling with background color, borders, and appropriate text colors
 - [ ] 6. Make footer responsive with different layouts for mobile and desktop viewports
 - [ ] 7. Write widget tests validating footer content, layout, and responsiveness
+
+## F4: Product Grid Section
+
+--
+Owner: @student
+Priority: High
+Status: Planned
+--
+Summary: Display product grid section on homepage with hardcoded product cards
+--
+Outcome: Users see an organized grid of featured products on the homepage with consistent styling
+--
+
+### Success Criteria
+
+#### Tests:
+- [ ] Product grid renders with correct number of columns based on screen width
+- [ ] Product cards display with image, title, price, and action button
+- [ ] Grid maintains consistent spacing and alignment across all product cards
+- [ ] Grid layout adapts from single column on mobile to multi-column on desktop
+- [ ] Product cards are clickable and trigger navigation to product detail page
+
+#### UI:
+- [ ] Product cards displayed in responsive GridView with 1 column on mobile, 2+ on desktop
+- [ ] Each card shows product image with proper aspect ratio and error handling
+- [ ] Product title displayed with readable font size (14-16px) below image
+- [ ] Price displayed prominently with currency symbol and consistent formatting
+- [ ] Action button (Add to Cart or View Details) styled to match app theme
+
+#### Internal Logic (APIs):
+- [ ] Grid implemented using GridView.count with responsive crossAxisCount
+- [ ] Product cards implemented as reusable ProductCard widget component
+- [ ] Cards use Image.network with errorBuilder for image loading failures
+- [ ] Cards respond to tap gestures with navigation or callback functions
+- [ ] Grid uses proper spacing (mainAxisSpacing, crossAxisSpacing) for layout
+
+#### Business Logic:
+N/A
+
+### Dependencies:
+- ProductCard widget (already exists in common_widgets.dart)
+
+### Testimonies
+
+#### User 1
+```
+As a shopper browsing the homepage, I want to see a grid of featured products 
+with images and prices so I can quickly browse and find items of interest.
+```
+
+#### User 2
+```
+As a mobile user with limited screen space, I want the product grid to adapt 
+to single column layout so I can easily view and tap on products.
+```
+
+### Implementation Plan
+
+- [ ] 1. Verify ProductCard widget exists and contains required properties
+- [ ] 2. Create GridView container with responsive column count based on screen width
+- [ ] 3. Populate grid with hardcoded ProductCard widgets for display
+- [ ] 4. Set appropriate spacing (mainAxisSpacing, crossAxisSpacing) for visual balance
+- [ ] 5. Implement responsive behavior with different column counts per viewport
+- [ ] 6. Add "PRODUCTS SECTION" header text above grid with consistent styling
+- [ ] 7. Write widget tests validating grid layout, card rendering, and responsiveness
