@@ -128,7 +128,7 @@ confusion or accidental taps.
 
 - [x] 1. Load logo image from network URL with error handling fallback implemented
 - [x] 2. Render search, account, and cart icons using Material Design Icon widgets
-- [ ] 3. Implement horizontal menu with Shop, About, and Print Shack text buttons
+- [x] 3. Implement horizontal menu with Shop, About, and Print Shack text buttons
 - [x] 4. Use Row with Expanded/Spacer widgets for proper spacing and flexible layout alignment
 - [x] 5. Apply background color and styling matching design system for navbar container
 - [ ] 6. Write widget tests validating navbar layout, component rendering, and responsiveness across viewports
