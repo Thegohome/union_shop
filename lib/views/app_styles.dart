@@ -50,4 +50,10 @@ const TextStyle footerOpeningHoursText = TextStyle(
   fontSize: 14, 
   fontWeight: FontWeight.bold,
   fontStyle: FontStyle.italic,
+  color: Colors.black
+);
+
+const TextStyle footerTextButtonText = TextStyle(
+  fontSize: 16,
+  color: Colors.black
 );
