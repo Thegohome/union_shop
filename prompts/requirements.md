@@ -126,11 +126,9 @@ confusion or accidental taps.
 
 ### Implementation Plan
 
-- [ ] 1. Review existing header/navbar structure in home_screen.dart to assess current state
-- [ ] 2. Verify logo image is accessible (from assets or network URL) with error handling
+- [x] 1. Load logo image from network URL with error handling fallback implemented
+- [x] 2. Render search, account, and cart icons using Material Design Icon widgets
 - [ ] 3. Implement horizontal menu with Shop, About, and Print Shack text buttons
-- [ ] 4. Add search, account, and cart icons using Material Design Icon widgets
-- [ ] 5. Use Row with Expanded/Spacer widgets to ensure proper spacing and alignment
-- [ ] 6. Apply background color, borders/shadows matching design system for navbar styling
-- [ ] 7. Verify navbar displays consistently on homepage and other pages
-- [ ] 8. Write widget tests validating layout, component rendering, and responsiveness
+- [x] 4. Use Row with Expanded/Spacer widgets for proper spacing and flexible layout alignment
+- [x] 5. Apply background color and styling matching design system for navbar container
+- [ ] 6. Write widget tests validating navbar layout, component rendering, and responsiveness across viewports
