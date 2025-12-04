@@ -329,33 +329,41 @@ Owner: @student
 Priority: Medium
 Status: Planned
 --
-Summary: Build authentication UI with login and signup forms (non-functional widgets acceptable)
+Summary: Build static login page with centered form box and authentication options
 --
-Outcome: Users see properly structured login and signup forms with fields ready for future backend integration
+Outcome: Users see a clean, centered login interface with email field and external provider button
 --
 
 ### Success Criteria
 
 #### Tests:
-- [ ] Authentication pages render with proper heading and form title
-- [ ] Login form displays email/username and password input fields
-- [ ] Signup form displays name, email, password, and confirm password fields
-- [ ] Form fields have appropriate labels, placeholders, and input validation UI
-- [ ] Submit buttons and navigation links between login/signup are present and styled
+- [ ] Login page renders with centered white container on neutral background
+- [ ] Page displays "Sign in" heading with descriptive subtitle
+- [ ] Page displays "Sign in with External Provider" button (blue/indigo)
+- [ ] Page displays email input field with placeholder text
+- [ ] Page displays "Continue" button (secondary/gray styling)
+- [ ] Divider text "or" displays between button and form fields
+- [ ] Union Shop logo displays at top of form
 
 #### UI:
-- [ ] Login page has clear heading "Login" or "Sign In" with centered form layout
-- [ ] All input fields are clearly labeled with descriptive text
-- [ ] Password fields mask input with dots or asterisks for security appearance
-- [ ] Form has prominent submit button styled to match app theme (purple background)
-- [ ] Links to signup page from login and vice versa with appropriate styling
+- [ ] Centered white rounded container (box styling, not full screen)
+- [ ] Union Shop logo positioned at top of form
+- [ ] "Sign in" heading with subtitle "Choose how you'd like to sign in"
+- [ ] "Sign in with External Provider" button in blue/indigo, full width
+- [ ] "or" divider text between button and form section
+- [ ] Email input field with "Email" placeholder
+- [ ] "Continue" button in secondary gray styling, full width
+- [ ] Responsive layout centers content on desktop/tablet, adapts on mobile
 
 #### Internal Logic (APIs):
-- [ ] Forms implemented using TextField widgets with TextEditingControllers
-- [ ] Form validation logic displays error messages for empty or invalid fields
-- [ ] Submit buttons have onPressed callbacks (placeholder functions for now)
-- [ ] Forms use Padding and Column for organized vertical layout
-- [ ] Forms are wrapped in scrollable container (SingleChildScrollView) for small screens
+- [ ] Page implemented as StatelessWidget with Column layout
+- [ ] Uses Scaffold with light gray or neutral background
+- [ ] Centered Container with white background for form box
+- [ ] TextField for email input with placeholder and no error state
+- [ ] ElevatedButton for "Sign in with External Provider" (blue/indigo)
+- [ ] ElevatedButton or TextButton for "Continue" (gray/secondary)
+- [ ] All buttons have placeholder onPressed callbacks
+- [ ] Form wrapped in SingleChildScrollView for mobile responsiveness
 
 #### Business Logic:
 N/A
@@ -367,25 +375,28 @@ N/A
 
 #### User 1
 ```
-As a returning customer, I want to see a clear and intuitive login form so I 
-can quickly sign in to my account and view my order history.
+As a returning customer, I want a straightforward login page where I can quickly 
+sign in via an external provider or with my email.
 ```
 
 #### User 2
 ```
-As a new customer, I want a straightforward signup form with clear instructions 
-so I can create an account to make purchases and track orders.
+As a new user, I want a clean, uncluttered login interface that makes it clear 
+how to sign in without overwhelming me with options.
 ```
 
 ### Implementation Plan
 
-- [ ] 1. Create LoginScreen widget with heading, email field, password field
-- [ ] 2. Create SignupScreen widget with name, email, password fields
-- [ ] 3. Add form validation logic to check for empty fields and display errors
-- [ ] 4. Add "Forgot Password?" link on login form and appropriate styling
-- [ ] 5. Add submit button on both forms with placeholder callback functions
-- [ ] 6. Add navigation links between login and signup pages using TextButton
-- [ ] 7. Write widget tests validating form fields, buttons, and navigation
+- [ ] 1. Create LoginScreen widget in views/login_screen.dart with Scaffold and neutral background
+- [ ] 2. Add centered white Container for form box (padding, border radius)
+- [ ] 3. Add Union Shop logo image at top of form
+- [ ] 4. Add "Sign in" heading with subtitle text below logo
+- [ ] 5. Add blue/indigo "Sign in with External Provider" ElevatedButton (full width)
+- [ ] 6. Add "or" divider text between button and form fields
+- [ ] 7. Add email TextField with placeholder text and no validation styling
+- [ ] 8. Add gray "Continue" ElevatedButton (full width) with placeholder callback
+- [ ] 9. Add route /login in main.dart for navigation
+- [ ] 10. Write widget tests validating logo, heading, buttons, input field, and layout
 
 ## F7: Print Shack About Page
 
