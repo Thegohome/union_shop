@@ -43,7 +43,7 @@ Project success is measured through:
 *Focus: Static UI, layout structure, hardcoded content acceptable*
 
 ### Homepage & Core Layout (14%)
-- [ ] 1. Create static homepage hero section with promotional banner and call-to-action button *→ #24
+- [x] 1. Create static homepage hero section with promotional banner and call-to-action button *→ #24
 - [ ] 2. Build static navigation bar with logo, menu items, search, account, and cart icons *→ #18-23
 - [ ] 3. Implement footer component with placeholder links and company information *→ #25
 - [ ] 4. Display product grid section on homepage with hardcoded product cards *→ #26
