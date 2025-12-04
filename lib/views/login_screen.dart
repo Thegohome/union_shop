@@ -28,7 +28,7 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   // Logo
                   Image.network(
-                    'https://api.unionshop.co.uk/api/images/logo.png',
+                    'https://shop.upsu.net/cdn/shop/files/upsu_300x300.png?v=1614735854',
                     height: 60,
                     errorBuilder: (context, error, stackTrace) {
                       return Container(
@@ -67,7 +67,7 @@ class LoginScreen extends StatelessWidget {
                     onPressed: _placeholderCallback,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: portsmouthPurple,
-                      padding: const EdgeInsets.symmetric(vertical: 16),
+                      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 30),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),
@@ -143,7 +143,7 @@ class LoginScreen extends StatelessWidget {
                     onPressed: _placeholderCallback,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.grey[200],
-                      padding: const EdgeInsets.symmetric(vertical: 16),
+                      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 30),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),
