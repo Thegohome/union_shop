@@ -392,4 +392,68 @@ so I can create an account to make purchases and track orders.
 - [ ] 5. Add submit button on both forms with placeholder callback functions
 - [ ] 6. Add navigation links between login and signup pages using TextButton
 - [ ] 7. Write widget tests validating form fields, buttons, and navigation
+
+## F7: Print Shack About Page
+
+--
+Owner: @student
+Priority: Medium
+Status: Planned
+--
+Summary: Create Print Shack About page with static information about text personalisation service
+--
+Outcome: Users learn about Print Shack service offerings and personalization capabilities
+--
+
+### Success Criteria
+
+#### Tests:
+- [ ] Print Shack page renders with proper heading and content hierarchy
+- [ ] Page displays service description and personalization capabilities
+- [ ] Page includes examples or use cases for personalized products
+- [ ] Page has call-to-action button directing to personalization/shopping
+- [ ] Page layout is responsive and readable on mobile and desktop
+
+#### UI:
+- [ ] Page title "The Print Shack" prominently displayed at top
+- [ ] Service description explains what text personalization services are offered
+- [ ] Section showing types of products available for personalization
+- [ ] Examples or sample images of personalized products displayed
+- [ ] Call-to-action button styled consistently with app theme color (purple)
+
+#### Internal Logic (APIs):
+- [ ] Page implemented as StatelessWidget with Column layout for content flow
+- [ ] Uses appropriate spacing and padding for visual hierarchy and readability
+- [ ] Images implemented with Image.network and errorBuilder fallbacks
+- [ ] Text styled using app_styles for consistent typography and colors
+- [ ] Call-to-action button uses TextButton or ElevatedButton with callback
+
+#### Business Logic:
+N/A
+
+### Dependencies:
+N/A
+
+### Testimonies
+
+#### User 1
+```
+As a customer interested in personalized gifts, I want to learn about Print 
+Shack offerings so I can understand customization options and product range.
+```
+
+#### User 2
+```
+As someone exploring the Union Shop, I want to see examples of personalized 
+products to get ideas for custom items I might want to create.
+```
+
+### Implementation Plan
+
+- [ ] 1. Create new PrintShackScreen widget and route in main.dart
+- [ ] 2. Add page heading "The Print Shack" with appropriate text styling
+- [ ] 3. Add service description section explaining personalization capabilities
+- [ ] 4. Add product types section listing available items for personalization
+- [ ] 5. Add examples section with sample images of personalized products
+- [ ] 6. Add call-to-action button linking to personalization form or shop
 - [ ] 7. Write widget tests validating page content, layout, and navigation
