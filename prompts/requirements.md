@@ -230,7 +230,7 @@ Outcome: Users see an organized grid of featured products on the homepage with c
 N/A
 
 ### Dependencies:
-- ProductCard widget (already exists in common_widgets.dart)
+- ProductCard component
 
 ### Testimonies
 
