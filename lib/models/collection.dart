@@ -16,6 +16,7 @@ class Collection {
   });
 
   int get productCount => products.length;
+
   Map<String, dynamic> toJson() {
     return {
       'id': id,
@@ -48,7 +49,7 @@ class Collection {
 
     return parsedProducts;
   }
-  
+
   // for search later on
   List<Product> searchProducts(String query) {
     final lowerQuery = query.toLowerCase();
