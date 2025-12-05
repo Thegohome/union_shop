@@ -157,6 +157,7 @@ Navigation and footer components featuring:
 ### Development Tools
 - **flutter_lints**: Static analysis for Dart code quality
 - **Git**: Version control
+- **Github Copilot**: See `prompts` folder, and `features.md` to understand usage
 
 ## Known Issues & Limitations
 
