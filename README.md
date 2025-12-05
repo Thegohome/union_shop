@@ -153,7 +153,6 @@ Navigation and footer components featuring:
 
 ### Key Dependencies
 - **Material Design**: Flutter's built-in Material library for UI components
-- **HTTP/REST**: Integration ready for API data fetching (currently using local JSON)
 
 ### Development Tools
 - **flutter_lints**: Static analysis for Dart code quality
