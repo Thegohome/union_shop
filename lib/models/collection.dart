@@ -31,9 +31,8 @@ class Collection {
         id: json['id'] as String,
         name: json['name'] as String,
         description: json['description'] as String,
-        products: json['products'] != null
-            ? _parseProducts(json['products'])
-            : [],
+        products:
+            json['products'] != null ? _parseProducts(json['products']) : [],
         image: json['image'] as String?);
   }
 
