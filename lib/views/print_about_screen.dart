@@ -22,15 +22,50 @@ class PrintAboutScreen extends StatelessWidget {
             Container(
               key: const Key('aboutTextBlock'),
               padding: const EdgeInsets.symmetric(horizontal: 40),
-              child: const Text(
-                'Welcome to the Union Shop!\n\n'
-                'We\'re dedicated to giving you the very best University branded products, with a range of clothing and merchandise available to shop all year round! We even offer an exclusive personalisation service!\n\n'
-                'All online purchases are available for delivery or instore collection!\n\n'
-                'We hope you enjoy our products as much as we enjoy offering them to you. If you have any questions or comments, please don\'t hesitate to contact us at hello@upsu.net.\n\n'
-                'Happy shopping!\n\n'
-                'The Union Shop & Reception Team',
-                textAlign: TextAlign.start,
-                style: pageText,
+              child: const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Make It Yours at The Union Print Shack',
+                    style: boldPageText,
+                  ),
+                  Text(
+                    'Want to add a personal touch? We\'ve got you covered with heat-pressed customisation on all our clothing. Swing by the shop - our team\'s always happy to help you pick the right gear and answer any questions.\n',
+                    style: pageText,
+                  ),
+                  Text(
+                    'Uni Gear or Your Gear - We\'ll Personalise It',
+                    style: boldPageText,
+                  ),
+                  Text(
+                    'Whether you\'re repping your university or putting your own spin on a hoodie you already own, we\'ve got you covered. We can personalise official uni-branded clothing and your own items - just bring them in and let\'s get creative!',
+                    style: pageText,
+                  ),
+                  Text(
+                    'Simple Pricing, No Surprises',
+                    style: boldPageText,
+                  ),
+                  Text(
+                    'Customising your gear won\'t break the bank - just £3 for one line of text or a small chest logo, and £5 for two lines or a large back logo. Turnaround time is up to three working days, and we\'ll let you know as soon as it\'s ready to collect.',
+                    style: pageText,
+                  ),
+                  Text(
+                    'Personalisation Terms & Conditions',
+                    style: boldPageText,
+                  ),
+                  Text(
+                    'We will print your clothing exactly as you have provided it to us, whether online or in person. We are not responsible for any spelling errors. Please ensure your chosen text is clearly displayed in either capitals or lowercase. Refunds are not provided for any personalised items.',
+                    style: pageText,
+                  ),
+                  Text(
+                    'Ready to Make It Yours?',
+                    style: boldPageText,
+                  ),
+                  Text(
+                    'Pop in or get in touch today - let\'s create something uniquely you with our personalisation service - The Union Print Shack!',
+                    style: pageText,
+                  ),
+                ],
               ),
             ),
             const SizedBox(height: 40),
