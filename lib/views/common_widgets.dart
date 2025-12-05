@@ -143,7 +143,6 @@ class _AppHeaderState extends State<AppHeader> {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     const headerHeight = 70.0;
-    const bannerHeight = 32.0;
 
     // Threshold: when width is less than this, show menu toggle
     const menuToggleThreshold = 900.0;
@@ -155,16 +154,16 @@ class _AppHeaderState extends State<AppHeader> {
         children: [
           // Top banner - fixed height
           Container(
-            width: screenWidth,
-            height: bannerHeight,
-            padding: const EdgeInsets.symmetric(vertical: 4),
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
             color: portsmouthPurple,
-            child: const SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
+            child: const Center(
               child: Text(
                 'BIG SALE! OUR ESSENTIAL RANGE HAS DROPPED IN PRICE! OVER 20% OFF! COME GRAB YOURS WHILE STOCK LASTS!',
                 textAlign: TextAlign.center,
                 style: bannerHeading,
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
               ),
             ),
           ),
