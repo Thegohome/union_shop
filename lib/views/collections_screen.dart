@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:union_shop/views/common_widgets.dart';
 
 class CollectionsScreen extends StatefulWidget {
   const CollectionsScreen({super.key});
@@ -11,8 +12,15 @@ class _CollectionsScreenState extends State<CollectionsScreen> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(
-        child: Text('Collections Screen'),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            // Header
+            AppHeader(),
+            // Footer
+            AppFooter(),
+          ],
+        ),
       ),
     );
   }
