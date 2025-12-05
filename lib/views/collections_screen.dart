@@ -40,6 +40,14 @@ class _CollectionsScreenState extends State<CollectionsScreen> {
             FutureBuilder<List<Collection>>(
               future: _collectionsFuture,
               builder: (context, snapshot) {
+                // Handle loading state
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 48.0),
+                    child: CircularProgressIndicator(),
+                  );
+                }
+
                 return Container(
                   color: Colors.white,
                   padding: const EdgeInsets.symmetric(
