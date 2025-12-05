@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:union_shop/views/common_widgets.dart';
 import 'package:union_shop/views/app_styles.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -28,17 +29,10 @@ class LoginScreen extends StatelessWidget {
                 children: [
                   // Logo
                   Image.asset(
-                      'assets/images/unionlogo.png',
+                    'assets/images/unionlogo.png',
                     height: 60,
                     errorBuilder: (context, error, stackTrace) {
-                      return Container(
-                        height: 60,
-                        width: 60,
-                        color: Colors.grey[300],
-                        child: const Center(
-                          child: Text('LOGO'),
-                        ),
-                      );
+                      return const ErrorContainer();
                     },
                   ),
                   const SizedBox(height: 40),
@@ -67,7 +61,8 @@ class LoginScreen extends StatelessWidget {
                     onPressed: _placeholderCallback,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: portsmouthPurple,
-                      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 30),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 16, horizontal: 30),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),
@@ -143,7 +138,8 @@ class LoginScreen extends StatelessWidget {
                     onPressed: _placeholderCallback,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.grey[200],
-                      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 30),
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 16, horizontal: 30),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),
                       ),
