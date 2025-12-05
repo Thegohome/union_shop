@@ -555,3 +555,58 @@ class AppFooter extends StatelessWidget {
     );
   }
 }
+
+/// CollectionCard widget for displaying collections
+/// Shows collection image with centered text overlay
+class CollectionCard extends StatelessWidget {
+  final String collectionName;
+  final String imagePath;
+
+  const CollectionCard({
+    super.key,
+    required this.collectionName,
+    required this.imagePath,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        // Navigate to collection page (placeholder)
+      },
+      child: Stack(
+        children: [
+          // Background image
+          Positioned.fill(
+            child: Image.asset(
+              imagePath,
+              fit: BoxFit.cover,
+              errorBuilder: (context, error, stackTrace) {
+                return const ErrorContainer();
+              },
+            ),
+          ),
+          // Dark overlay
+          Positioned.fill(
+            child: Container(
+              color: Colors.black.withValues(alpha: 0.4),
+            ),
+          ),
+          // Centered text overlay
+          Center(
+            child: Text(
+              collectionName,
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                height: 1.2,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
