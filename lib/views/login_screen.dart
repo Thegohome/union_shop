@@ -27,8 +27,8 @@ class LoginScreen extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   // Logo
-                  Image.network(
-                    'https://shop.upsu.net/cdn/shop/files/upsu_300x300.png?v=1614735854',
+                  Image.asset(
+                      'assets/images/unionlogo.png',
                     height: 60,
                     errorBuilder: (context, error, stackTrace) {
                       return Container(

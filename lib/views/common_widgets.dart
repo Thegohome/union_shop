@@ -140,9 +140,9 @@ class AppHeader extends StatelessWidget {
                     onTap: () {
                       _navigateToHome(context);
                     },
-                    child: Image.network(
-                      'https://shop.upsu.net/cdn/shop/files/upsu_300x300.png?v=1614735854',
-                      height: 18,
+                    child: Image.asset(
+                      'assets/images/unionlogo.png',
+                      height: 65,
                       fit: BoxFit.cover,
                       errorBuilder: (context, error, stackTrace) {
                         return Container(
