@@ -12,6 +12,14 @@ class CollectionsScreen extends StatefulWidget {
 }
 
 class _CollectionsScreenState extends State<CollectionsScreen> {
+  late Future<List<Collection>> _collectionsFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _collectionsFuture = CollectionRepository().getAll();
+  }
+
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
