@@ -77,7 +77,7 @@ class _ProductCardState extends State<ProductCard> {
               Expanded(
                 child: Image.asset(
                   firstImage,
-                  fit: BoxFit.cover,
+                  fit: BoxFit.contain,
                   errorBuilder: (context, error, stackTrace) {
                     return const ErrorContainer();
                   },
