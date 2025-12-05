@@ -22,22 +22,33 @@ class _CollectionsScreenState extends State<CollectionsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             // Header
-            AppHeader(),
+            const AppHeader(),
             // Page Title
-            Padding(
+            const Padding(
               padding: EdgeInsets.symmetric(vertical: 48.0),
               child: Text(
                 'Collections',
                 style: heroTitle,
               ),
             ),
+            // Collections Grid with FutureBuilder
+            FutureBuilder<List<Collection>>(
+              future: _collectionsFuture,
+              builder: (context, snapshot) {
+                return Container(
+                  color: Colors.white,
+                  padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 48.0),
+                  child: const Text('Collections grid will be built here'),
+                );
+              },
+            ),
             // Footer
-            AppFooter(),
+            const AppFooter(),
           ],
         ),
       ),
