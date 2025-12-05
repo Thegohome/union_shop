@@ -354,7 +354,6 @@ Outcome: Users learn about Print Shack service offerings and personalization cap
 - [ ] Print Shack page renders with proper heading and content hierarchy
 - [ ] Page displays service description and personalization capabilities
 - [ ] Page includes examples or use cases for personalized products
-- [ ] Page has call-to-action button directing to personalization/shopping
 - [ ] Page layout is responsive and readable on mobile and desktop
 
 #### UI:
@@ -369,7 +368,6 @@ Outcome: Users learn about Print Shack service offerings and personalization cap
 - [ ] Uses appropriate spacing and padding for visual hierarchy and readability
 - [ ] Images implemented with Image.network and errorBuilder fallbacks
 - [ ] Text styled using app_styles for consistent typography and colors
-- [ ] Call-to-action button uses TextButton or ElevatedButton with callback
 
 #### Business Logic:
 N/A
@@ -398,8 +396,7 @@ products to get ideas for custom items I might want to create.
 - [ ] 3. Add service description section explaining personalization capabilities
 - [ ] 4. Add product types section listing available items for personalization
 - [ ] 5. Add examples section with sample images of personalized products
-- [ ] 6. Add call-to-action button linking to personalization form or shop
-- [ ] 7. Write widget tests validating page content, layout, and navigation
+- [ ] 6. Write widget tests validating page content, layout, and navigation
 
 ## F8: Collections overview page - await F29
 ## F9: Collection page (product list) - await F32
@@ -493,7 +490,6 @@ N/A
 - [ ] Collection class created with properties: id, name, description, products, categoryType, image
 - [ ] Collection constructor with required and optional parameters
 - [ ] Collection supports JSON serialization/deserialization (toJson, fromJson methods)
-- [ ] Collection supports equality operator and hashCode for comparison
 - [ ] Collection model located in lib/models/collection.dart
 
 #### Business Logic:
