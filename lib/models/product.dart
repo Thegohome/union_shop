@@ -39,6 +39,17 @@ class Product {
       'options': options,
     };
   }
+
+  factory Product.fromJson(Map<String, dynamic> json) { // this is not a method
+    return Product(
+        id: json['id'] as String,
+        name: json['name'] as String,
+        price: (json['price'] as num).toDouble(),
+        images: List<String>.from(json['images'] as List),
+        description: json['description'] as String,
+        isSale: json['isSale'] as bool? ?? false,
+        salePrice: json['salePrice'] != null
+            ? (json['salePrice'] as num).toDouble()
+            : null);
+  }
 }
-
-
