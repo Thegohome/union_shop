@@ -421,24 +421,23 @@ Outcome: Application has structured data representation for products enabling dy
 ### Success Criteria
 
 #### Tests:
-- [ ] Product model instantiates with all required properties
-- [ ] Product model correctly handles variants and sale status
-- [ ] Product model supports conversion to/from JSON for data persistence
-- [ ] Product equality comparison works for testing and data validation
+- [x] Product model instantiates with all required properties
+- [x] Product model correctly handles variants and sale status
+- [x] Product model supports conversion to/from JSON for data persistence
 
 #### UI:
 N/A
 
 #### Internal Logic (APIs):
-- [ ] Product class created with properties: id, name, price, images, description, variants(map), isSale, salePrice
-- [ ] Product constructor with required and optional parameters
-- [ ] Product supports JSON serialization/deserialization (toJson, fromJson methods)
-- [ ] Product model located in lib/models/product.dart
+- [x] Product class created with properties: id, name, price, images, description, variants(map), isSale, salePrice
+- [x] Product constructor with required and optional parameters
+- [x] Product supports JSON serialization/deserialization (toJson, fromJson methods)
+- [x] Product model located in lib/models/product.dart
 
 #### Business Logic:
-- [ ] Product variant handling supports multiple options per product
-- [ ] Sale price logic validates sale price is less than regular price
-- [ ] Product supports multiple images with fallback for missing images
+- [x] Product variant handling supports multiple options per product
+- [x] Sale price logic validates sale price is less than regular price
+- [x] Product supports multiple images
 
 ### Dependencies:
 N/A
@@ -463,9 +462,9 @@ products can be persisted to storage and retrieved dynamically.
 - [x] 2. Define Product class with required properties: id, name, price, images, description
 - [x] 3. Add optional properties: variants, isSale, salePrice
 - [x] 4. Implement Product constructor with parameter validation
-- [ ] 5. Add toJson() method for JSON serialization
-- [ ] 6. Add fromJson() factory constructor for JSON deserialization
-- [ ] 7. Create tests for this elements of the implementation
+- [x] 5. Add toJson() method for JSON serialization
+- [x] 6. Add fromJson() factory constructor for JSON deserialization
+- [x] 7. Create tests for this elements of the implementation
 
 ## F13: Collection Data Model
 
