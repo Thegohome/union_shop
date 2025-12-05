@@ -49,4 +49,26 @@ class Collection {
 
     return parsedProducts;
   }
+  
+  // for search later on
+  List<Product> searchProducts(String query) {
+    final lowerQuery = query.toLowerCase();
+    List<Product> results = [];
+
+    for (Product product in products) {
+      String productName = product.name.toLowerCase();
+      String productDescription = product.description.toLowerCase();
+      bool nameMatch = productName.contains(lowerQuery);
+      bool descriptionMatch = productDescription.contains(lowerQuery);
+
+      if (nameMatch || descriptionMatch) {
+        results.add(product);
+      }
+    }
+
+    return results;
+  }
+
 }
+
+
