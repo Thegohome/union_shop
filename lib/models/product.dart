@@ -27,6 +27,32 @@ class Product {
     }
   }
 
+  /// Generates a unique ID for this product variant based on selected options.
+  /// 
+  /// If no options are provided, returns the regular product id.
+  /// If options are provided, returns format: [id]++[option1Index][option2Index]...
+  /// 
+  /// Example: "hoodie++20" means large (index 2) + blue (index 0)
+  String getUniqueId(Map<String, int> selectedOptions) {
+    // If no options selected or product has no options, return regular id
+    if (selectedOptions.isEmpty || options == null || options!.isEmpty) {
+      return id;
+    }
+
+    String variantSuffix = '';
+
+    // Build the suffix in order of available options
+    for (String optionKey in options!.keys) {
+      if (selectedOptions.containsKey(optionKey)) {
+        int selectedIndex = selectedOptions[optionKey]!;
+        variantSuffix += selectedIndex.toString();
+      }
+    }
+
+    // Return format: [id]++[indices]
+    return '$id++$variantSuffix';
+  }
+
   Map<String, dynamic> toJson() {
     return {
       'id': id,
