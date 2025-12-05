@@ -29,9 +29,13 @@ class ProductRepository {
       final jsonData = jsonDecode(jsonString) as Map<String, dynamic>;
       final productsList = jsonData['products'] as List;
 
-      _products = productsList
-          .map((product) => Product.fromJson(product as Map<String, dynamic>))
-          .toList();
+      List<Product> parsedProducts = [];
+      for (dynamic productItem in productsList) {
+        Map<String, dynamic> productJson = productItem as Map<String, dynamic>;
+        Product product = Product.fromJson(productJson);
+        parsedProducts.add(product);
+      }
+      _products = parsedProducts;
     } catch (error) {
       throw Exception('Failed to load products: $error');
     }
