@@ -6,6 +6,7 @@ class Product {
   final String description;
   final bool isSale;
   final double? salePrice;
+  final Map<String, List<String>>? options;
 
   Product({
     required this.id,
@@ -15,6 +16,7 @@ class Product {
     required this.description,
     this.isSale = false,
     this.salePrice,
+    this.options
   }) {
     _validatePrices();
   }
