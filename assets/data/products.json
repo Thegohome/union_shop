@@ -1,0 +1,118 @@
+{
+  "products": [
+    {
+      "id": "shirt847",
+      "name": "Union Shop T-Shirt",
+      "price": 14.99,
+      "images": ["assets/images/shirt0.jpg", "assets/images/shirt1.jpg", "assets/images/shirt2.jpg", "assets/images/shirt3.jpg"],
+      "description": "Classic cotton t-shirt perfect for everyday wear with a comfortable fit",
+      "isSale": false,
+      "salePrice": null,
+      "options": {
+        "Size": ["XS", "S", "M", "L", "XL"],
+        "Color": ["White", "Navy", "Black", "Heather Gray"]
+      }
+    },
+    {
+      "id": "trouser612",
+      "name": "Casual Trousers",
+      "price": 39.99,
+      "images": ["assets/images/trouser0.jpg", "assets/images/trouser1.jpg"],
+      "description": "Comfortable and durable trousers ideal for casual and semi-formal occasions",
+      "isSale": true,
+      "salePrice": 26.99,
+      "options": {
+        "Size": ["S", "M", "L"],
+        "Color": ["Charcoal", "Olive"]
+      }
+    },
+    {
+      "id": "waterbottle425",
+      "name": "Stainless Steel Water Bottle",
+      "price": 24.99,
+      "images": ["assets/images/waterbottle0.jpg"],
+      "description": "Keep your drinks cold or hot with this insulated water bottle. Perfect for campus life",
+      "isSale": false,
+      "salePrice": null,
+      "options": null
+    },
+    {
+      "id": "postcard938",
+      "name": "Seasonal Postcard Set",
+      "price": 6.99,
+      "images": ["assets/images/postcard0.jpg", "assets/images/postcard1.jpg", "assets/images/postcard2.jpg", "assets/images/postcard3.jpg"],
+      "description": "Beautiful set of postcards featuring seasonal artwork to send to friends and family",
+      "isSale": false,
+      "salePrice": null,
+      "options": {
+        "Design": ["Autumn", "Winter", "Spring", "Summer"]
+      }
+    },
+    {
+      "id": "teddybear354",
+      "name": "Cute Plush Teddy Bear",
+      "price": 16.99,
+      "images": ["assets/images/teddybear0.jpg", "assets/images/teddybear1.jpg"],
+      "description": "Adorable soft teddy bear companion. Perfect gift or comfort item",
+      "isSale": false,
+      "salePrice": null,
+      "options": {
+        "Color": ["Cinnamon Brown", "Cream"]
+      }
+    },
+    {
+      "id": "naturekeyring721",
+      "name": "Nature-Inspired Keyring",
+      "price": 7.99,
+      "images": ["assets/images/naturekeyring0.jpg", "assets/images/naturekeyring1.jpg", "assets/images/naturekeyring2.jpg", "assets/images/naturekeyring3.jpg", "assets/images/naturekeyring4.jpg"],
+      "description": "Eco-friendly keyring featuring beautiful nature designs to express your love for the outdoors",
+      "isSale": false,
+      "salePrice": null,
+      "options": {
+        "Style": ["Leaf", "Tree", "Sun", "Droplet", "Flower"]
+      }
+    },
+    {
+      "id": "halloweenbag593",
+      "name": "Halloween Canvas Bag",
+      "price": 18.99,
+      "images": ["assets/images/halloweenbag0.jpg", "assets/images/halloweenbag1.jpg", "assets/images/halloweenbag2.jpg"],
+      "description": "Festive reusable bag with spooky and fun Halloween designs perfect for any season",
+      "isSale": true,
+      "salePrice": 12.99,
+      "options": {
+        "Style": ["Pumpkin Patch", "Ghost Party", "Haunted Manor"]
+      }
+    },
+    {
+      "id": "pencil286",
+      "name": "Wooden Pencil Pack",
+      "price": 4.99,
+      "images": ["assets/images/pencil0.jpg"],
+      "description": "Set of quality wooden pencils perfect for sketching, writing, or note-taking",
+      "isSale": false,
+      "salePrice": null,
+      "options": null
+    },
+    {
+      "id": "pen115",
+      "name": "Premium Ballpoint Pen",
+      "price": 3.99,
+      "images": ["assets/images/pen0.jpg"],
+      "description": "Smooth writing ballpoint pen with reliable ink flow for all your writing needs",
+      "isSale": false,
+      "salePrice": null,
+      "options": null
+    },
+    {
+      "id": "cd874",
+      "name": "Blank CD-R",
+      "price": 0.99,
+      "images": ["assets/images/cd0.jpg"],
+      "description": "High-quality blank CD for recording music, data, or creating personal compilations",
+      "isSale": false,
+      "salePrice": null,
+      "options": null
+    }
+  ]
+}

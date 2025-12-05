@@ -1,0 +1,39 @@
+{
+  "collections": [
+    {
+      "id": "sale",
+      "name": "Sale & Specials",
+      "description": "Limited time offers and discounted items. Shop now and save big on selected products",
+      "image": "assets/images/sale-banner.jpg",
+      "productIds": ["trouser612", "halloweenbag593"]
+    },
+    {
+      "id": "clothes",
+      "name": "Clothing",
+      "description": "Comfortable and stylish clothing for everyday wear and special occasions",
+      "image": "assets/images/clothes-banner.jpg",
+      "productIds": ["shirt847", "trouser612"]
+    },
+    {
+      "id": "merchandise",
+      "name": "Merchandise & Gifts",
+      "description": "Unique gifts, keyrings, teddy bears and fun items perfect for yourself or loved ones",
+      "image": "assets/images/merchandise-banner.jpg",
+      "productIds": ["teddybear354", "naturekeyring721", "halloweenbag593", "postcard938"]
+    },
+    {
+      "id": "essentials",
+      "name": "Essentials",
+      "description": "Everyday essentials including writing supplies, bottles and practical items",
+      "image": "assets/images/essentials-banner.jpg",
+      "productIds": ["waterbottle425", "pencil286", "pen115", "cd874"]
+    },
+    {
+      "id": "seasonal",
+      "name": "Seasonal Collection",
+      "description": "Themed items and collections that celebrate the seasons and holidays throughout the year",
+      "image": "assets/images/seasonal-banner.jpg",
+      "productIds": ["postcard938", "halloweenbag593"]
+    }
+  ]
+}
