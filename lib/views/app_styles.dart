@@ -66,4 +66,5 @@ const TextStyle pageTitle = TextStyle(
 
 const TextStyle pageText = TextStyle(fontSize: 16, color: Colors.black);
 
-const TextStyle boldPageText = TextStyle(fontSize: 16, color: Colors.black);
+const TextStyle boldPageText =
+    TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold);
