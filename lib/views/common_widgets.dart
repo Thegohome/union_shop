@@ -35,6 +35,14 @@ class ProductCard extends StatefulWidget {
 }
 
 class _ProductCardState extends State<ProductCard> {
+  late Future<Product?> _productFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _productFuture = ProductRepository().getById(widget.productId);
+  }
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
