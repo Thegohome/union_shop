@@ -61,11 +61,22 @@ class _CollectionsScreenState extends State<CollectionsScreen> {
                   );
                 }
 
+                final collections = snapshot.data!;
                 return Container(
                   color: Colors.white,
                   padding: const EdgeInsets.symmetric(
                       horizontal: 40.0, vertical: 48.0),
-                  child: const Text('Collections grid will be built here'),
+                  child: GridView.count(
+                    shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
+                    crossAxisCount:
+                        MediaQuery.of(context).size.width > 600 ? 3 : 1,
+                    crossAxisSpacing: 24,
+                    mainAxisSpacing: 48,
+                    children: const [
+                      Text('Collection cards will go here'),
+                    ],
+                  ),
                 );
               },
             ),
