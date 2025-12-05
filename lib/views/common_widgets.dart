@@ -66,7 +66,8 @@ class _ProductCardState extends State<ProductCard> {
 
         return GestureDetector(
           onTap: () {
-            Navigator.pushNamed(context, '/product', arguments: widget.productId);
+            Navigator.pushNamed(context, '/product',
+                arguments: widget.productId);
           },
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
