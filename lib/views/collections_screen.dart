@@ -81,8 +81,15 @@ class _CollectionsScreenState extends State<CollectionsScreen> {
                             imagePath: collection.image ??
                                 'assets/images/placeholder.png',
                             onTap: () {
-                              // Navigate to collection detail page (placeholder)
-                              // TODO: Implement collection detail page navigation
+                              // Navigate to collection view page
+                              final queryParams = Uri(queryParameters: {
+                                'id': collection.id,
+                                'name': collection.name,
+                              }).query;
+                              Navigator.pushNamed(
+                                context,
+                                '/collection-view/?$queryParams',
+                              );
                             },
                           ),
                         )
