@@ -80,6 +80,10 @@ class _CollectionsScreenState extends State<CollectionsScreen> {
                             collectionName: collection.name,
                             imagePath: collection.image ??
                                 'assets/images/placeholder.png',
+                            onTap: () {
+                              // Navigate to collection detail page (placeholder)
+                              // TODO: Implement collection detail page navigation
+                            },
                           ),
                         )
                         .toList(),

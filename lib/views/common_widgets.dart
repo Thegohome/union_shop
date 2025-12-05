@@ -561,19 +561,19 @@ class AppFooter extends StatelessWidget {
 class CollectionCard extends StatelessWidget {
   final String collectionName;
   final String imagePath;
+  final VoidCallback? onTap;
 
   const CollectionCard({
     super.key,
     required this.collectionName,
     required this.imagePath,
+    this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        // Navigate to collection page (placeholder)
-      },
+      onTap: onTap,
       child: Stack(
         children: [
           // Background image
