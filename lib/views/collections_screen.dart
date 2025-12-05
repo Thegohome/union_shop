@@ -73,9 +73,16 @@ class _CollectionsScreenState extends State<CollectionsScreen> {
                         MediaQuery.of(context).size.width > 600 ? 3 : 1,
                     crossAxisSpacing: 24,
                     mainAxisSpacing: 48,
-                    children: const [
-                      Text('Collection cards will go here'),
-                    ],
+                    childAspectRatio: 1.0,
+                    children: collections
+                        .map(
+                          (collection) => CollectionCard(
+                            collectionName: collection.name,
+                            imagePath: collection.image ??
+                                'assets/images/placeholder.png',
+                          ),
+                        )
+                        .toList(),
                   ),
                 );
               },
