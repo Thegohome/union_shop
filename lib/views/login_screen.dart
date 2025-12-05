@@ -30,7 +30,7 @@ class LoginScreen extends StatelessWidget {
                   // Logo
                   Image.asset(
                     'assets/images/unionlogo.png',
-                    height: 60,
+                    fit: BoxFit.contain,
                     errorBuilder: (context, error, stackTrace) {
                       return const ErrorContainer();
                     },
