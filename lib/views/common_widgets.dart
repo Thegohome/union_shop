@@ -1,6 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:union_shop/views/app_styles.dart';
 
+/// ErrorContainer widget for displaying image load errors
+/// Shows a grey container with an image not supported icon
+class ErrorContainer extends StatelessWidget {
+  const ErrorContainer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.grey[300],
+      child: const Center(
+        child: Icon(
+          Icons.image_not_supported,
+          color: Colors.grey,
+        ),
+      ),
+    );
+  }
+}
+
 class ProductCard extends StatelessWidget {
   final String title;
   final String price;
@@ -27,12 +46,7 @@ class ProductCard extends StatelessWidget {
               imageUrl,
               fit: BoxFit.cover,
               errorBuilder: (context, error, stackTrace) {
-                return Container(
-                  color: Colors.grey[300],
-                  child: const Center(
-                    child: Icon(Icons.image_not_supported, color: Colors.grey),
-                  ),
-                );
+                return const ErrorContainer();
               },
             ),
           ),
@@ -145,15 +159,7 @@ class AppHeader extends StatelessWidget {
                       height: 65,
                       fit: BoxFit.cover,
                       errorBuilder: (context, error, stackTrace) {
-                        return Container(
-                          color: Colors.grey[300],
-                          width: 18,
-                          height: 18,
-                          child: const Center(
-                            child: Icon(Icons.image_not_supported,
-                                color: Colors.grey),
-                          ),
-                        );
+                        return const ErrorContainer();
                       },
                     ),
                   ),
