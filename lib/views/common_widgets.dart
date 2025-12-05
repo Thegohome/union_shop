@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:union_shop/views/app_styles.dart';
+import 'package:union_shop/repositories/product_repository.dart';
+import 'package:union_shop/models/product.dart';
 
 /// ErrorContainer widget for displaying image load errors
 /// Shows a grey container with an image not supported icon
