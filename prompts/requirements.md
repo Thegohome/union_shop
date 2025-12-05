@@ -669,3 +669,87 @@ decisions.
 - [ ] 13. Remove const keyword from GridView.children since ProductCards are now stateful
 - [ ] 14. Run flutter analyze to verify no compilation errors
 - [ ] 15. Test that all ProductCards load with real data and display correctly
+
+## F29: Populate Collections Overview Page 
+
+--
+Owner: @student
+Priority: High
+Status: Planned
+--
+Summary: Create Collections overview page that fetches and displays all collections in responsive grid layout
+--
+Outcome: Users see a dedicated Collections page displaying all available collections (sale, clothes, merchandise, essentials, seasonal) with images and titles
+--
+
+### Success Criteria
+
+#### Tests:
+- [ ] Collections page renders with AppHeader and AppFooter
+- [ ] Page displays "Collections" heading centered at top
+- [ ] Collections page fetches data from CollectionRepository.getAll()
+- [ ] Page displays loading indicator while fetching collections
+- [ ] Page displays error message if collection fetch fails
+- [ ] Collections displayed in responsive grid (3 columns desktop,, 1 mobile)
+- [ ] Each collection card shows background image with centered text overlay
+
+#### UI:
+- [ ] Page title "Collections" prominently displayed and centered
+- [ ] Collections in responsive GridView with 3 columns on desktop (>600px width)
+- [ ] Collection cards show background image with semi-transparent overlay
+- [ ] Collection name displayed as white centered text on image
+- [ ] Proper spacing and aspect ratio maintained for cards
+- [ ] Cards are tappable with clear visual feedback
+
+#### Internal Logic (APIs):
+- [ ] CollectionsScreen implemented as StatefulWidget
+- [ ] Uses CollectionRepository().getAll() to fetch collections
+- [ ] FutureBuilder handles loading/error/success states
+- [ ] GridView.count implements responsive layout
+- [ ] CollectionCard widget created as reusable component
+- [ ] Image.asset() used for collection images
+
+#### Business Logic:
+- [ ] Collections fetched on widget initialization
+- [ ] All available collections from JSON data displayed
+- [ ] Proper error handling for missing/failed data
+
+### Dependencies:
+- Collection model (F13)
+- CollectionRepository (F14)
+- CollectionsScreen created at lib/views/collections_screen.dart
+
+### Testimonies
+
+#### User 1
+```
+As a shopper, I want to see all available product collections on a dedicated 
+page so I can browse different categories and find items I'm interested in.
+```
+
+#### User 2
+```
+As a mobile user, I want the collections page to display collections in a 
+responsive layout that adapts to my screen size so I can easily see all options.
+```
+
+### Implementation Plan
+
+- [ ] 1. Create lib/views/collections_screen.dart file
+- [ ] 2. Implement CollectionsScreen as StatefulWidget with _CollectionsScreenState
+- [ ] 3. Add Scaffold structure with AppHeader and AppFooter
+- [ ] 4. Add centered page title "Collections" using heroTitle text style
+- [ ] 5. Add imports for CollectionRepository and Collection model
+- [ ] 6. Add `late Future<List<Collection>> _collectionsFuture;` field to state
+- [ ] 7. Initialize _collectionsFuture in initState() by calling CollectionRepository().getAll()
+- [ ] 8. Wrap collections content in FutureBuilder<List<Collection>> for async handling
+- [ ] 9. Implement loading state: display CircularProgressIndicator centered
+- [ ] 10. Implement error/empty state: display error message if fetch fails
+- [ ] 11. Create responsive GridView.count with 3 columns (desktop), 2 (tablet), 1 (mobile)
+- [ ] 12. Build CollectionCard widget displaying collection image with text overlay
+- [ ] 13. Each card shows collection.image as background with Image.asset()
+- [ ] 14. Display collection.name as white centered text overlay on image
+- [ ] 15. Add navigation route /collections in main.dart
+- [ ] 16. Implement placeholder navigation on collection card tap
+- [ ] 17. Run flutter analyze to verify no compilation errors
+- [ ] 18. Test that page loads collections and displays them correctly
