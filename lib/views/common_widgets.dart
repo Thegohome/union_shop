@@ -23,15 +23,11 @@ class ErrorContainer extends StatelessWidget {
 }
 
 class ProductCard extends StatefulWidget {
-  final String title;
-  final String price;
-  final String imageUrl;
+  final String productId;
 
   const ProductCard({
     super.key,
-    required this.title,
-    required this.price,
-    required this.imageUrl,
+    required this.productId,
   });
 
   @override
