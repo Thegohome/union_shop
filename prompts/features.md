@@ -81,6 +81,7 @@ Project success is measured through:
 - [ ] 23. Enable search icon navigation to search functionality (Depends: #56)
 - [ ] 24. Implement navbar menu drawer/overlay for mobile view with all navigation options
 - [ ] 25. Populate footer with dynamic links to collections, pages, and company information (Depends: #13, #14)
+- [ ] 25.5. Refactor ProductCard component to accept product ID and fetch data from ProductRepository (Depends: #12, #14)
 
 ### Dynamic Homepage (3%)
 - [ ] 26. Populate homepage product section with preview items from multiple featured collections (Depends: #12, #13, #14, #4)
