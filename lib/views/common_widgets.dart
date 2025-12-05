@@ -214,7 +214,7 @@ class _ShopDropdownState extends State<ShopDropdown> {
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Text('Shop', style: navbarMenuItem),
+                const Text('Shop', style: navbarMenuItem),
                 const SizedBox(width: 8),
                 Icon(
                   _isOpen ? Icons.expand_less : Icons.expand_more,
