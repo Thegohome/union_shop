@@ -90,10 +90,34 @@ class _ProductCardState extends State<ProductCard> {
                     maxLines: 2,
                   ),
                   const SizedBox(height: 4),
-                  Text(
-                    widget.price,
-                    style: const TextStyle(fontSize: 13, color: Colors.grey),
-                  ),
+                  // Conditional price display based on sale status
+                  if (product.isSale)
+                    Row(
+                      children: [
+                        Text(
+                          '£${product.price.toStringAsFixed(2)}',
+                          style: const TextStyle(
+                            fontSize: 13,
+                            color: Colors.grey,
+                            decoration: TextDecoration.lineThrough,
+                          ),
+                        ),
+                        const SizedBox(width: 8),
+                        Text(
+                          '£${product.salePrice!.toStringAsFixed(2)}',
+                          style: const TextStyle(
+                            fontSize: 13,
+                            color: portsmouthPurple,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    )
+                  else
+                    Text(
+                      '£${product.price.toStringAsFixed(2)}',
+                      style: const TextStyle(fontSize: 13, color: Colors.grey),
+                    ),
                 ],
               ),
             ],
