@@ -37,16 +37,7 @@ class HomeScreen extends StatelessWidget {
                       'https://shop.upsu.net/cdn/shop/files/PortsmouthCityPostcard2_1024x1024@2x.jpg?v=1752232561',
                       fit: BoxFit.cover,
                       errorBuilder: (context, error, stackTrace) {
-                        return Container(
-                          color: Colors.grey[300],
-                          child: const Center(
-                            child: Icon(
-                              Icons.image_not_supported,
-                              size: 64,
-                              color: Colors.grey,
-                            ),
-                          ),
-                        );
+                        return const ErrorContainer();
                       },
                     ),
                   ),
