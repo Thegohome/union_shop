@@ -62,7 +62,9 @@ void main() {
       });
 
       test('Product instantiates with optional parameters', () {
-        final options = {'size': ['S', 'M', 'L']};
+        final options = {
+          'size': ['S', 'M', 'L']
+        };
         final product = Product(
           id: '2',
           name: 'Premium Product',
@@ -111,7 +113,8 @@ void main() {
         );
       });
 
-      test('Constructor allows sale price equal to regular price (edge case)', () {
+      test('Constructor allows sale price equal to regular price (edge case)',
+          () {
         expect(
           () => Product(
             id: '1',
