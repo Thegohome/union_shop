@@ -48,6 +48,19 @@ class _CollectionsScreenState extends State<CollectionsScreen> {
                   );
                 }
 
+                // Handle error or empty state
+                if (snapshot.hasError ||
+                    !snapshot.hasData ||
+                    snapshot.data!.isEmpty) {
+                  return const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 48.0),
+                    child: Text(
+                      'No collections found',
+                      style: heroSubtitle,
+                    ),
+                  );
+                }
+
                 return Container(
                   color: Colors.white,
                   padding: const EdgeInsets.symmetric(
