@@ -115,8 +115,15 @@ class HelpInfoButton extends StatelessWidget {
   }
 }
 
-class AppHeader extends StatelessWidget {
+class AppHeader extends StatefulWidget {
   const AppHeader({super.key});
+
+  @override
+  State<AppHeader> createState() => _AppHeaderState();
+}
+
+class _AppHeaderState extends State<AppHeader> {
+  bool _isMenuOpen = false;
 
   void _navigateToHome(BuildContext context) {
     Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
@@ -126,30 +133,49 @@ class AppHeader extends StatelessWidget {
     // Placeholder for buttons that don't have functionality yet
   }
 
+  void _toggleMenu() {
+    setState(() {
+      _isMenuOpen = !_isMenuOpen;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    const headerHeight = 70.0;
+    const bannerHeight = 32.0;
+
+    // Threshold: when width is less than this, show menu toggle
+    const menuToggleThreshold = 900.0;
+    final showMenuToggle = screenWidth < menuToggleThreshold;
+
     return Container(
-      height: 100,
       color: Colors.white,
       child: Column(
         children: [
-          // Top banner
+          // Top banner - fixed height
           Container(
-            width: double.infinity,
-            padding: const EdgeInsets.symmetric(vertical: 8),
+            width: screenWidth,
+            height: bannerHeight,
+            padding: const EdgeInsets.symmetric(vertical: 4),
             color: portsmouthPurple,
-            child: const Text(
-              'BIG SALE! OUR ESSENTIAL RANGE HAS DROPPED IN PRICE! OVER 20% OFF! COME GRAB YOURS WHILE STOCK LASTS!',
-              textAlign: TextAlign.center,
-              style: bannerHeading,
+            child: const SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Text(
+                'BIG SALE! OUR ESSENTIAL RANGE HAS DROPPED IN PRICE! OVER 20% OFF! COME GRAB YOURS WHILE STOCK LASTS!',
+                textAlign: TextAlign.center,
+                style: bannerHeading,
+              ),
             ),
           ),
-          // Main header
-          Expanded(
+          // Main header - fixed height
+          SizedBox(
+            height: headerHeight,
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Row(
                 children: [
+                  // Logo
                   GestureDetector(
                     onTap: () {
                       _navigateToHome(context);
@@ -162,74 +188,115 @@ class AppHeader extends StatelessWidget {
                       },
                     ),
                   ),
-                  const Spacer(),
-                  // Menu items - constrained to prevent overflow
+                  // Navigation menu - centered and hidden on mobile
                   Expanded(
-                    flex: 2,
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          NavMenuItem(
-                            text: 'Home',
-                            onPressed: _placeholderCallback,
-                          ),
-                          const SizedBox(width: 24),
-                          NavMenuItem(
-                            text: 'Shop',
-                            onPressed: _placeholderCallback,
-                            icon: Icons.expand_more,
-                          ),
-                          const SizedBox(width: 24),
-                          NavMenuItem(
-                            text: 'The Print Shack',
-                            onPressed: _placeholderCallback,
-                            icon: Icons.expand_more,
-                          ),
-                          const SizedBox(width: 24),
-                          NavMenuItem(
-                            text: 'SALE!',
-                            onPressed: _placeholderCallback,
-                          ),
-                          const SizedBox(width: 24),
-                          NavMenuItem(
-                            text: 'About',
-                            onPressed: _placeholderCallback,
-                          ),
-                        ],
-                      ),
+                    child: Center(
+                      child: !showMenuToggle
+                          ? Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                NavMenuItem(
+                                  text: 'Home',
+                                  onPressed: _placeholderCallback,
+                                ),
+                                const SizedBox(width: 24),
+                                NavMenuItem(
+                                  text: 'Shop',
+                                  onPressed: _placeholderCallback,
+                                  icon: Icons.expand_more,
+                                ),
+                                const SizedBox(width: 24),
+                                NavMenuItem(
+                                  text: 'The Print Shack',
+                                  onPressed: _placeholderCallback,
+                                  icon: Icons.expand_more,
+                                ),
+                                const SizedBox(width: 24),
+                                NavMenuItem(
+                                  text: 'SALE!',
+                                  onPressed: _placeholderCallback,
+                                ),
+                                const SizedBox(width: 24),
+                                NavMenuItem(
+                                  text: 'About',
+                                  onPressed: _placeholderCallback,
+                                ),
+                              ],
+                            )
+                          : const SizedBox.shrink(),
                     ),
                   ),
-                  const Spacer(),
-                  ConstrainedBox(
-                    constraints: const BoxConstraints(maxWidth: 600),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        HeaderIconButton(
-                          icon: Icons.search,
-                          onPressed: _placeholderCallback,
-                        ),
-                        HeaderIconButton(
-                          icon: Icons.person_outline,
-                          onPressed: _placeholderCallback,
-                        ),
-                        HeaderIconButton(
-                          icon: Icons.shopping_bag_outlined,
-                          onPressed: _placeholderCallback,
-                        ),
-                        HeaderIconButton(
-                          icon: Icons.menu,
-                          onPressed: _placeholderCallback,
-                        ),
-                      ],
+                  // Action icons - always visible
+                  HeaderIconButton(
+                    icon: Icons.search,
+                    onPressed: _placeholderCallback,
+                  ),
+                  HeaderIconButton(
+                    icon: Icons.person_outline,
+                    onPressed: _placeholderCallback,
+                  ),
+                  HeaderIconButton(
+                    icon: Icons.shopping_bag_outlined,
+                    onPressed: _placeholderCallback,
+                  ),
+                  // Menu toggle button - only shown when space is limited
+                  if (showMenuToggle)
+                    HeaderIconButton(
+                      icon: Icons.menu,
+                      onPressed: _toggleMenu,
+                    ),
+                ],
+              ),
+            ),
+          ),
+          // Dropdown menu - shown when toggle is active
+          if (showMenuToggle && _isMenuOpen)
+            Container(
+              width: double.infinity,
+              color: Colors.grey[50],
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: NavMenuItem(
+                      text: 'Home',
+                      onPressed: _placeholderCallback,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: NavMenuItem(
+                      text: 'Shop',
+                      onPressed: _placeholderCallback,
+                      icon: Icons.expand_more,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: NavMenuItem(
+                      text: 'The Print Shack',
+                      onPressed: _placeholderCallback,
+                      icon: Icons.expand_more,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: NavMenuItem(
+                      text: 'SALE!',
+                      onPressed: _placeholderCallback,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: NavMenuItem(
+                      text: 'About',
+                      onPressed: _placeholderCallback,
                     ),
                   ),
                 ],
               ),
             ),
-          ),
         ],
       ),
     );
