@@ -166,6 +166,131 @@ class HelpInfoButton extends StatelessWidget {
   }
 }
 
+class ShopDropdown extends StatefulWidget {
+  final Function(String, String) onCollectionSelected;
+
+  const ShopDropdown({
+    super.key,
+    required this.onCollectionSelected,
+  });
+
+  @override
+  State<ShopDropdown> createState() => _ShopDropdownState();
+}
+
+class _ShopDropdownState extends State<ShopDropdown> {
+  late Future<List<Collection>> _collectionsFuture;
+  bool _isOpen = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _collectionsFuture = CollectionRepository().getAll();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          _isOpen = !_isOpen;
+        });
+      },
+      child: MouseRegion(
+        onEnter: (_) {
+          setState(() {
+            _isOpen = true;
+          });
+        },
+        onExit: (_) {
+          setState(() {
+            _isOpen = false;
+          });
+        },
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text('Shop', style: navbarMenuItem),
+                const SizedBox(width: 8),
+                Icon(
+                  _isOpen ? Icons.expand_less : Icons.expand_more,
+                  size: 18,
+                  color: Colors.black,
+                ),
+              ],
+            ),
+            if (_isOpen)
+              FutureBuilder<List<Collection>>(
+                future: _collectionsFuture,
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return const Padding(
+                      padding: EdgeInsets.only(top: 8.0),
+                      child: SizedBox(
+                        width: 150,
+                        child: LinearProgressIndicator(),
+                      ),
+                    );
+                  }
+
+                  if (snapshot.hasError ||
+                      !snapshot.hasData ||
+                      snapshot.data!.isEmpty) {
+                    return const Padding(
+                      padding: EdgeInsets.only(top: 8.0),
+                      child: Text('No collections available'),
+                    );
+                  }
+
+                  final collections = snapshot.data!;
+                  return Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(color: Colors.grey[300]!),
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: collections
+                          .map(
+                            (collection) => InkWell(
+                              onTap: () {
+                                widget.onCollectionSelected(
+                                  collection.id,
+                                  collection.name,
+                                );
+                                setState(() {
+                                  _isOpen = false;
+                                });
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  vertical: 12.0,
+                                  horizontal: 16.0,
+                                ),
+                                child: Text(
+                                  collection.name,
+                                  style: navbarMenuItem,
+                                ),
+                              ),
+                            ),
+                          )
+                          .toList(),
+                    ),
+                  );
+                },
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 class AppHeader extends StatefulWidget {
   const AppHeader({super.key});
 
@@ -182,6 +307,10 @@ class _AppHeaderState extends State<AppHeader> {
 
   void _navigateToAbout(BuildContext context) {
     Navigator.pushNamed(context, '/about');
+  }
+
+  void _navigateToSale(BuildContext context) {
+    Navigator.pushNamed(context, '/collections');
   }
 
   void _placeholderCallback() {
@@ -254,10 +383,18 @@ class _AppHeaderState extends State<AppHeader> {
                                   onPressed: () => _navigateToHome(context),
                                 ),
                                 const SizedBox(width: 24),
-                                NavMenuItem(
-                                  text: 'Shop',
-                                  onPressed: _placeholderCallback,
-                                  icon: Icons.expand_more,
+                                ShopDropdown(
+                                  onCollectionSelected:
+                                      (collectionId, collectionName) {
+                                    final queryParams = Uri(queryParameters: {
+                                      'id': collectionId,
+                                      'name': collectionName,
+                                    }).query;
+                                    Navigator.pushNamed(
+                                      context,
+                                      '/collection-view/?$queryParams',
+                                    );
+                                  },
                                 ),
                                 const SizedBox(width: 24),
                                 NavMenuItem(
@@ -268,7 +405,7 @@ class _AppHeaderState extends State<AppHeader> {
                                 const SizedBox(width: 24),
                                 NavMenuItem(
                                   text: 'SALE!',
-                                  onPressed: _placeholderCallback,
+                                  onPressed: () => _navigateToSale(context),
                                 ),
                                 const SizedBox(width: 24),
                                 NavMenuItem(
@@ -320,10 +457,62 @@ class _AppHeaderState extends State<AppHeader> {
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: NavMenuItem(
-                      text: 'Shop',
-                      onPressed: _placeholderCallback,
-                      icon: Icons.expand_more,
+                    child: FutureBuilder<List<Collection>>(
+                      future: CollectionRepository().getAll(),
+                      builder: (context, snapshot) {
+                        if (snapshot.hasData && snapshot.data!.isNotEmpty) {
+                          return Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child: Text(
+                                  'Shop',
+                                  style: navbarMenuItem,
+                                ),
+                              ),
+                              ...snapshot.data!
+                                  .map(
+                                    (collection) => Padding(
+                                      padding: const EdgeInsets.only(
+                                        left: 24.0,
+                                        bottom: 8.0,
+                                      ),
+                                      child: TextButton(
+                                        onPressed: () {
+                                          final queryParams =
+                                              Uri(queryParameters: {
+                                            'id': collection.id,
+                                            'name': collection.name,
+                                          }).query;
+                                          Navigator.pushNamed(
+                                            context,
+                                            '/collection-view/?$queryParams',
+                                          );
+                                          setState(() {
+                                            _isMenuOpen = false;
+                                          });
+                                        },
+                                        child: Text(
+                                          collection.name,
+                                          style: navbarMenuItem,
+                                        ),
+                                      ),
+                                    ),
+                                  )
+                                  .toList(),
+                            ],
+                          );
+                        }
+                        return Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: NavMenuItem(
+                            text: 'Shop',
+                            onPressed: _placeholderCallback,
+                            icon: Icons.expand_more,
+                          ),
+                        );
+                      },
                     ),
                   ),
                   Padding(
@@ -338,7 +527,7 @@ class _AppHeaderState extends State<AppHeader> {
                     padding: const EdgeInsets.all(8.0),
                     child: NavMenuItem(
                       text: 'SALE!',
-                      onPressed: _placeholderCallback,
+                      onPressed: () => _navigateToSale(context),
                     ),
                   ),
                   Padding(
