@@ -37,11 +37,16 @@ class CollectionRepository {
       final jsonData = jsonDecode(jsonString) as Map<String, dynamic>;
       final collectionsList = jsonData['collections'] as List;
 
-      _collections = collectionsList
-          .map((c) => Collection.fromJson(c as Map<String, dynamic>))
-          .toList();
-    } catch (e) {
-      throw Exception('Failed to load collections: $e');
+      List<Collection> parsedCollections = [];
+      for (dynamic collectionItem in collectionsList) {
+        Map<String, dynamic> collectionJson =
+            collectionItem as Map<String, dynamic>;
+        Collection collection = Collection.fromJson(collectionJson);
+        parsedCollections.add(collection);
+      }
+      _collections = parsedCollections;
+    } catch (error) {
+      throw Exception('Failed to load collections: $error');
     }
   }
 
@@ -61,7 +66,7 @@ class CollectionRepository {
 
     try {
       return _collections.firstWhere((collection) => collection.id == id);
-    } catch (e) {
+    } catch (error) {
       return null;
     }
   }
