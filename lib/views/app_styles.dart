@@ -68,3 +68,34 @@ const TextStyle pageText = TextStyle(fontSize: 16, color: Colors.black);
 
 const TextStyle boldPageText =
     TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.bold);
+
+// Product Card
+const TextStyle productCardName = TextStyle(
+  fontSize: 14,
+  color: Colors.black,
+);
+
+const TextStyle productCardRegularPrice = TextStyle(
+  fontSize: 13,
+  color: Colors.grey,
+);
+
+const TextStyle productCardSaleOriginalPrice = TextStyle(
+  fontSize: 13,
+  color: Colors.grey,
+  decoration: TextDecoration.lineThrough,
+);
+
+const TextStyle productCardSalePrice = TextStyle(
+  fontSize: 13,
+  color: portsmouthPurple,
+  fontWeight: FontWeight.bold,
+);
+
+// Collection Card
+const TextStyle collectionCardName = TextStyle(
+  fontSize: 20,
+  fontWeight: FontWeight.bold,
+  color: Colors.white,
+  height: 1.2,
+);
