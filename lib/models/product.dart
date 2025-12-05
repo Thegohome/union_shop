@@ -26,4 +26,19 @@ class Product {
       throw ArgumentError('Sale price must be less than regular price');
     }
   }
+
+    Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'price': price,
+      'images': images,
+      'description': description,
+      'isSale': isSale,
+      'salePrice': salePrice,
+      'options': options,
+    };
+  }
 }
+
+
