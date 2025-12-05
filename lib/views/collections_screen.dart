@@ -42,7 +42,8 @@ class _CollectionsScreenState extends State<CollectionsScreen> {
               builder: (context, snapshot) {
                 return Container(
                   color: Colors.white,
-                  padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 48.0),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 40.0, vertical: 48.0),
                   child: const Text('Collections grid will be built here'),
                 );
               },
