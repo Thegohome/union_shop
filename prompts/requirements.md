@@ -587,3 +587,85 @@ hardcoded data to API calls or local storage is straightforward.
 - [ ] 6. Add getAll() method to fetch all collections
 - [ ] 7. Add getById(id) method to fetch specific collection
 - [ ] 8. Initialize repositories with hardcoded sample data
+
+## F25.5: ProductCard Repository Integration
+
+--
+Owner: @student
+Priority: High
+Status: Planned
+--
+Summary: Refactor ProductCard component to accept product ID and dynamically fetch product data from ProductRepository
+--
+Outcome: ProductCard displays real product data (name, price, images) with sale price formatting by accepting only a product ID parameter
+--
+
+### Success Criteria
+
+#### Tests:
+- [ ] ProductCard accepts productId parameter instead of individual title/price/imageUrl parameters
+- [ ] ProductCard displays loading state while fetching product data
+- [ ] ProductCard displays error state if product not found or fetch fails
+- [ ] ProductCard displays product name, price, and image when data loads successfully
+- [ ] ProductCard shows sale price with strikethrough original price when product is on sale
+- [ ] ProductCard uses local asset images instead of network images
+- [ ] Multiple ProductCards can be instantiated with different product IDs
+
+#### UI:
+- [ ] ProductCard displays CircularProgressIndicator while loading
+- [ ] Product name displayed in 14px black text (maxLines: 2)
+- [ ] Regular price displayed in 13px grey text
+- [ ] Sale price displayed in 13px purple bold text with original price struck through
+- [ ] Product image loads from local assets with proper fit and error handling
+- [ ] Card maintains responsive aspect ratio within GridView layout
+
+#### Internal Logic (APIs):
+- [ ] ProductCard converted from StatelessWidget to StatefulWidget
+- [ ] ProductCard constructor accepts single `productId` parameter (required String)
+- [ ] ProductCard uses FutureBuilder to handle async data loading from ProductRepository
+- [ ] ProductCard calls ProductRepository().getById(productId) in initState
+- [ ] ProductCard uses Image.asset() instead of Image.network()
+- [ ] Sale price display implemented with conditional logic on product.isSale property
+
+#### Business Logic:
+- [ ] Product data fetched on widget initialization
+- [ ] Sale price formatting shows both original (strikethrough) and sale prices side-by-side
+- [ ] Error handling gracefully displays ErrorContainer if product not found
+
+### Dependencies:
+- Product model (F12)
+- ProductRepository (F14)
+
+### Testimonies
+
+#### User 1
+```
+As a developer, I want ProductCard to fetch its own data so that I can 
+instantiate it by just providing a product ID, reducing duplication and 
+keeping parent widgets simple.
+```
+
+#### User 2
+```
+As a user viewing the homepage, I want to see real product data with 
+proper pricing and sale information so that I can make informed shopping 
+decisions.
+```
+
+### Implementation Plan
+
+- [ ] 1. Add imports to common_widgets.dart: ProductRepository and Product model
+- [ ] 2. Convert ProductCard from StatelessWidget to StatefulWidget with _ProductCardState
+- [ ] 3. Update ProductCard constructor to accept single `productId` parameter (required String)
+- [ ] 4. Add `late Future<Product?> _productFuture;` field to _ProductCardState
+- [ ] 5. Initialize _productFuture in initState() by calling ProductRepository().getById(widget.productId)
+- [ ] 6. Wrap entire UI in FutureBuilder<Product?> to handle async state (loading/error/success)
+- [ ] 7. Implement loading state: display CircularProgressIndicator centered
+- [ ] 8. Implement error state: display ErrorContainer if snapshot has error or data is null
+- [ ] 9. Extract first image from product.images[0] and change Image.network() to Image.asset()
+- [ ] 10. Display product.name in title section with 14px black text, maxLines: 2
+- [ ] 11. Implement conditional price display based on product.isSale
+- [ ] 12. Update HomeScreen ProductCard instantiations to use productId 
+- [ ] 13. Remove const keyword from GridView.children since ProductCards are now stateful
+- [ ] 14. Run flutter analyze to verify no compilation errors
+- [ ] 15. Test that all ProductCards load with real data and display correctly
