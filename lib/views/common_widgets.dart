@@ -156,8 +156,7 @@ class AppHeader extends StatelessWidget {
                     },
                     child: Image.asset(
                       'assets/images/unionlogo.png',
-                      height: 65,
-                      fit: BoxFit.cover,
+                      fit: BoxFit.contain,
                       errorBuilder: (context, error, stackTrace) {
                         return const ErrorContainer();
                       },
