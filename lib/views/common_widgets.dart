@@ -181,6 +181,8 @@ class ShopDropdown extends StatefulWidget {
 class _ShopDropdownState extends State<ShopDropdown> {
   late Future<List<Collection>> _collectionsFuture;
   bool _isOpen = false;
+  OverlayEntry? _overlayEntry;
+  final LayerLink _layerLink = LayerLink();
 
   @override
   void initState() {
@@ -188,106 +190,146 @@ class _ShopDropdownState extends State<ShopDropdown> {
     _collectionsFuture = CollectionRepository().getAll();
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        setState(() {
-          _isOpen = !_isOpen;
-        });
-      },
-      child: MouseRegion(
-        onEnter: (_) {
-          setState(() {
-            _isOpen = true;
-          });
-        },
-        onExit: (_) {
-          setState(() {
-            _isOpen = false;
-          });
-        },
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const Text('Shop', style: navbarMenuItem),
-                const SizedBox(width: 8),
-                Icon(
-                  _isOpen ? Icons.expand_less : Icons.expand_more,
-                  size: 18,
-                  color: Colors.black,
+  void _toggleDropdown() {
+    if (_isOpen) {
+      _closeDropdown();
+    } else {
+      _openDropdown();
+    }
+  }
+
+  void _openDropdown() {
+    setState(() {
+      _isOpen = true;
+    });
+
+    final renderBox = context.findRenderObject() as RenderBox;
+    final size = renderBox.size;
+    final offset = renderBox.localToGlobal(Offset.zero);
+
+    _overlayEntry = OverlayEntry(
+      builder: (context) => Positioned(
+        left: offset.dx,
+        top: offset.dy + size.height + 8,
+        width: 200,
+        child: Material(
+          elevation: 8,
+          borderRadius: BorderRadius.circular(4),
+          child: FutureBuilder<List<Collection>>(
+            future: _collectionsFuture,
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return const SizedBox(
+                  height: 50,
+                  child: Center(child: LinearProgressIndicator()),
+                );
+              }
+
+              if (snapshot.hasError ||
+                  !snapshot.hasData ||
+                  snapshot.data!.isEmpty) {
+                return const SizedBox(
+                  child: Padding(
+                    padding: EdgeInsets.all(12.0),
+                    child: Text('No collections available'),
+                  ),
+                );
+              }
+
+              final collections = snapshot.data!;
+              return Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border.all(color: Colors.grey[300]!),
+                  borderRadius: BorderRadius.circular(4),
                 ),
-              ],
-            ),
-            if (_isOpen)
-              FutureBuilder<List<Collection>>(
-                future: _collectionsFuture,
-                builder: (context, snapshot) {
-                  if (snapshot.connectionState == ConnectionState.waiting) {
-                    return const Padding(
-                      padding: EdgeInsets.only(top: 8.0),
-                      child: SizedBox(
-                        width: 150,
-                        child: LinearProgressIndicator(),
-                      ),
-                    );
-                  }
-
-                  if (snapshot.hasError ||
-                      !snapshot.hasData ||
-                      snapshot.data!.isEmpty) {
-                    return const Padding(
-                      padding: EdgeInsets.only(top: 8.0),
-                      child: Text('No collections available'),
-                    );
-                  }
-
-                  final collections = snapshot.data!;
-                  return Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(color: Colors.grey[300]!),
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: collections
-                          .map(
-                            (collection) => InkWell(
-                              onTap: () {
-                                widget.onCollectionSelected(
-                                  collection.id,
-                                  collection.name,
-                                );
-                                setState(() {
-                                  _isOpen = false;
-                                });
-                              },
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                  vertical: 12.0,
-                                  horizontal: 16.0,
-                                ),
-                                child: Text(
-                                  collection.name,
-                                  style: navbarMenuItem,
-                                ),
+                constraints: const BoxConstraints(
+                  maxHeight: 400,
+                ),
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: collections
+                        .map(
+                          (collection) => GestureDetector(
+                            onTap: () {
+                              widget.onCollectionSelected(
+                                collection.id,
+                                collection.name,
+                              );
+                              _closeDropdown();
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(
+                                vertical: 12.0,
+                                horizontal: 16.0,
+                              ),
+                              child: Text(
+                                collection.name,
+                                style: navbarMenuItem,
                               ),
                             ),
-                          )
-                          .toList(),
-                    ),
-                  );
-                },
-              ),
-          ],
+                          ),
+                        )
+                        .toList(),
+                  ),
+                ),
+              );
+            },
+          ),
         ),
       ),
     );
+
+    Overlay.of(context).insert(_overlayEntry!);
+  }
+
+  void _closeDropdown() {
+    _overlayEntry?.remove();
+    _overlayEntry = null;
+    setState(() {
+      _isOpen = false;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return CompositedTransformTarget(
+      link: _layerLink,
+      child: MouseRegion(
+        onEnter: (_) {
+          if (!_isOpen) {
+            _openDropdown();
+          }
+        },
+        onExit: (_) {
+          if (_isOpen) {
+            _closeDropdown();
+          }
+        },
+        child: GestureDetector(
+          onTap: _toggleDropdown,
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Text('Shop', style: navbarMenuItem),
+              const SizedBox(width: 8),
+              Icon(
+                _isOpen ? Icons.expand_less : Icons.expand_more,
+                size: 18,
+                color: Colors.black,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    _overlayEntry?.remove();
+    super.dispose();
   }
 }
 
