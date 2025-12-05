@@ -86,7 +86,7 @@ class _ProductCardState extends State<ProductCard> {
                   const SizedBox(height: 4),
                   Text(
                     product.name,
-                    style: const TextStyle(fontSize: 14, color: Colors.black),
+                    style: productCardName,
                     maxLines: 2,
                   ),
                   const SizedBox(height: 4),
@@ -96,27 +96,19 @@ class _ProductCardState extends State<ProductCard> {
                       children: [
                         Text(
                           '£${product.price.toStringAsFixed(2)}',
-                          style: const TextStyle(
-                            fontSize: 13,
-                            color: Colors.grey,
-                            decoration: TextDecoration.lineThrough,
-                          ),
+                          style: productCardSaleOriginalPrice,
                         ),
                         const SizedBox(width: 8),
                         Text(
                           '£${product.salePrice!.toStringAsFixed(2)}',
-                          style: const TextStyle(
-                            fontSize: 13,
-                            color: portsmouthPurple,
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: productCardSalePrice,
                         ),
                       ],
                     )
                   else
                     Text(
                       '£${product.price.toStringAsFixed(2)}',
-                      style: const TextStyle(fontSize: 13, color: Colors.grey),
+                      style: productCardRegularPrice,
                     ),
                 ],
               ),
@@ -597,12 +589,7 @@ class CollectionCard extends StatelessWidget {
             child: Text(
               collectionName,
               textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-                height: 1.2,
-              ),
+              style: collectionCardName,
             ),
           ),
         ],
