@@ -351,23 +351,23 @@ Outcome: Users learn about Print Shack service offerings and personalization cap
 ### Success Criteria
 
 #### Tests:
-- [ ] Print Shack page renders with proper heading and content hierarchy
-- [ ] Page displays service description and personalization capabilities
-- [ ] Page includes examples or use cases for personalized products
-- [ ] Page layout is responsive and readable on mobile and desktop
+- [x] Print Shack page renders with proper heading and content hierarchy
+- [x] Page displays service description and personalization capabilities
+- [x] Page includes examples or use cases for personalized products
+- [x] Page layout is responsive and readable on mobile and desktop
 
 #### UI:
-- [ ] Page title "The Print Shack" prominently displayed at top
-- [ ] Service description explains what text personalization services are offered
-- [ ] Section showing types of products available for personalization
-- [ ] Examples or sample images of personalized products displayed
-- [ ] Call-to-action button styled consistently with app theme color (purple)
+- [x] Page title "The Print Shack" prominently displayed at top
+- [x] Service description explains what text personalization services are offered
+- [x] Section showing types of products available for personalization
+- [x] Examples or sample images of personalized products displayed
+- [x] Call-to-action button styled consistently with app theme color (purple)
 
 #### Internal Logic (APIs):
-- [ ] Page implemented as StatelessWidget with Column layout for content flow
-- [ ] Uses appropriate spacing and padding for visual hierarchy and readability
-- [ ] Images implemented with Image.network and errorBuilder fallbacks
-- [ ] Text styled using app_styles for consistent typography and colors
+- [x] Page implemented as StatelessWidget with Column layout for content flow
+- [x] Uses appropriate spacing and padding for visual hierarchy and readability
+- [x] Images implemented with Image.network and errorBuilder fallbacks
+- [x] Text styled using app_styles for consistent typography and colors
 
 #### Business Logic:
 N/A
@@ -391,12 +391,12 @@ products to get ideas for custom items I might want to create.
 
 ### Implementation Plan
 
-- [ ] 1. Create new PrintShackScreen widget and route in main.dart
-- [ ] 2. Add page heading "The Print Shack" with appropriate text styling
-- [ ] 3. Add service description section explaining personalization capabilities
-- [ ] 4. Add product types section listing available items for personalization
-- [ ] 5. Add examples section with sample images of personalized products
-- [ ] 6. Write widget tests validating page content, layout, and navigation
+- [x] 1. Create new PrintShackScreen widget and route in main.dart
+- [x] 2. Add page heading "The Print Shack" with appropriate text styling
+- [x] 3. Add service description section explaining personalization capabilities
+- [x] 4. Add product types section listing available items for personalization
+- [x] 5. Add examples section with sample images of personalized products
+- [x] 6. Write widget tests validating page content, layout, and navigation
 
 ## F8: Collections overview page - await F29
 ## F9: Collection page (product list) - await F32
@@ -478,23 +478,22 @@ Outcome: Application has structured data representation for product collections 
 ### Success Criteria
 
 #### Tests:
-- [ ] Collection model instantiates with all required properties
-- [ ] Collection model correctly stores list of products
-- [ ] Collection model supports conversion to/from JSON
+- [x] Collection model instantiates with all required properties
+- [x] Collection model correctly stores list of products
+- [x] Collection model supports conversion to/from JSON
 - [ ] Collection equality comparison works for testing and data validation
 
 #### UI:
 N/A
 
 #### Internal Logic (APIs):
-- [ ] Collection class created with properties: id, name, description, products, categoryType, image
-- [ ] Collection constructor with required and optional parameters
-- [ ] Collection supports JSON serialization/deserialization (toJson, fromJson methods)
-- [ ] Collection model located in lib/models/collection.dart
+- [x] Collection class created with properties: id, name, description, products, categoryType, image
+- [x] Collection constructor with required and optional parameters
+- [x] Collection supports JSON serialization/deserialization (toJson, fromJson methods)
+- [x] Collection model located in lib/models/collection.dart
 
 #### Business Logic:
-- [ ] Collection maintains ordered list of Product objects
-- [ ] Collection supports category type enum (All, Sales, Featured, etc.)
+- [x] Collection maintains ordered list of Product objects
 - [ ] Collection provides product count and filtering utilities
 
 ### Dependencies:
@@ -516,13 +515,13 @@ collections can be fetched, stored, and displayed dynamically.
 
 ### Implementation Plan
 
-- [ ] 1. Create lib/models/collection.dart file
-- [ ] 2. Define Collection class with required properties: id, name, description, categoryType
-- [ ] 3. Add products property to hold list of Product objects
-- [ ] 4. Add optional image property for collection display
-- [ ] 5. Implement Collection constructor with parameter validation
-- [ ] 6. Add toJson() method for JSON serialization
-- [ ] 7. Add fromJson() factory constructor for JSON deserialization
+- [x] 1. Create lib/models/collection.dart file
+- [x] 2. Define Collection class with required properties: id, name, description, categoryType
+- [x] 3. Add products property to hold list of Product objects
+- [x] 4. Add optional image property for collection display
+- [x] 5. Implement Collection constructor with parameter validation
+- [x] 6. Add toJson() method for JSON serialization
+- [x] 7. Add fromJson() factory constructor for JSON deserialization
 
 ## F14: Data Repository/Service Layer
 
