@@ -62,6 +62,8 @@ class _ProductCardState extends State<ProductCard> {
 
         // Build UI with product data
         final product = snapshot.data!;
+        final firstImage = product.images.isNotEmpty ? product.images[0] : '';
+
         return GestureDetector(
           onTap: () {
             Navigator.pushNamed(context, '/product');
@@ -70,8 +72,8 @@ class _ProductCardState extends State<ProductCard> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Expanded(
-                child: Image.network(
-                  widget.imageUrl,
+                child: Image.asset(
+                  firstImage,
                   fit: BoxFit.cover,
                   errorBuilder: (context, error, stackTrace) {
                     return const ErrorContainer();
@@ -83,7 +85,7 @@ class _ProductCardState extends State<ProductCard> {
                 children: [
                   const SizedBox(height: 4),
                   Text(
-                    widget.title,
+                    product.name,
                     style: const TextStyle(fontSize: 14, color: Colors.black),
                     maxLines: 2,
                   ),
