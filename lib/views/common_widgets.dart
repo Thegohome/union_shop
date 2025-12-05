@@ -296,31 +296,19 @@ class _ShopDropdownState extends State<ShopDropdown> {
   Widget build(BuildContext context) {
     return CompositedTransformTarget(
       link: _layerLink,
-      child: MouseRegion(
-        onEnter: (_) {
-          if (!_isOpen) {
-            _openDropdown();
-          }
-        },
-        onExit: (_) {
-          if (_isOpen) {
-            _closeDropdown();
-          }
-        },
-        child: GestureDetector(
-          onTap: _toggleDropdown,
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const Text('Shop', style: navbarMenuItem),
-              const SizedBox(width: 8),
-              Icon(
-                _isOpen ? Icons.expand_less : Icons.expand_more,
-                size: 18,
-                color: Colors.black,
-              ),
-            ],
-          ),
+      child: GestureDetector(
+        onTap: _toggleDropdown,
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const Text('Shop', style: navbarMenuItem),
+            const SizedBox(width: 8),
+            Icon(
+              _isOpen ? Icons.expand_less : Icons.expand_more,
+              size: 18,
+              color: Colors.black,
+            ),
+          ],
         ),
       ),
     );
