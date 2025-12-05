@@ -18,3 +18,5 @@ class Collection {
     required this.categoryType,
     this.image,
   });
+
+  int get productCount => products.length;
