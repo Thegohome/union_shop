@@ -50,6 +50,17 @@ class Product {
         isSale: json['isSale'] as bool? ?? false,
         salePrice: json['salePrice'] != null
             ? (json['salePrice'] as num).toDouble()
-            : null);
+            : null,
+        options: json['options'] != null ? _parseOptions(json['options']) : null);
+  }
+
+  static Map<String, List<String>>? _parseOptions(dynamic optionsData) {
+    if (optionsData == null) return null;
+    
+    return Map<String, List<String>>.from(
+      (optionsData as Map).map(
+        (key, value) => MapEntry(key, List<String>.from(value as List)),
+      ),
+    );
   }
 }
