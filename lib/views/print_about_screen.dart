@@ -25,7 +25,15 @@ class PrintAboutScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Center(child: Image.asset('assets/images/printshacklogo.png', fit: BoxFit.contain)),
+                  Center(
+                    child: Image.asset(
+                      'assets/images/printshacklogo.png',
+                      fit: BoxFit.contain,
+                      errorBuilder: (context, error, stackTrace) {
+                        return const ErrorContainer();
+                      },
+                    ),
+                  ),
                   const Text(
                     'Make It Yours at The Union Print Shack',
                     style: boldPageText,
