@@ -462,7 +462,7 @@ products can be persisted to storage and retrieved dynamically.
 - [x] 1. Create lib/models/product.dart file
 - [x] 2. Define Product class with required properties: id, name, price, images, description
 - [x] 3. Add optional properties: variants, isSale, salePrice
-- [ ] 4. Implement Product constructor with parameter validation
+- [x] 4. Implement Product constructor with parameter validation
 - [ ] 5. Add toJson() method for JSON serialization
 - [ ] 6. Add fromJson() factory constructor for JSON deserialization
 - [ ] 7. Create tests for this elements of the implementation
