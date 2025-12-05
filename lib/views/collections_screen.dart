@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:union_shop/views/common_widgets.dart';
 import 'package:union_shop/views/app_styles.dart';
+import 'package:union_shop/repositories/collection_repository.dart';
+import 'package:union_shop/models/collection.dart';
 
 class CollectionsScreen extends StatefulWidget {
   const CollectionsScreen({super.key});
