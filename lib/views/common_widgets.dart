@@ -45,40 +45,59 @@ class _ProductCardState extends State<ProductCard> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.pushNamed(context, '/product');
-      },
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(
-            child: Image.network(
-              widget.imageUrl,
-              fit: BoxFit.cover,
-              errorBuilder: (context, error, stackTrace) {
-                return const ErrorContainer();
-              },
-            ),
-          ),
-          Column(
+    return FutureBuilder<Product?>(
+      future: _productFuture,
+      builder: (context, snapshot) {
+        // Handle loading state
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        }
+
+        // Handle error or null state
+        if (snapshot.hasError || snapshot.data == null) {
+          return const ErrorContainer();
+        }
+
+        // Build UI with product data
+        final product = snapshot.data!;
+        return GestureDetector(
+          onTap: () {
+            Navigator.pushNamed(context, '/product');
+          },
+          child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 4),
-              Text(
-                widget.title,
-                style: const TextStyle(fontSize: 14, color: Colors.black),
-                maxLines: 2,
+              Expanded(
+                child: Image.network(
+                  widget.imageUrl,
+                  fit: BoxFit.cover,
+                  errorBuilder: (context, error, stackTrace) {
+                    return const ErrorContainer();
+                  },
+                ),
               ),
-              const SizedBox(height: 4),
-              Text(
-                widget.price,
-                style: const TextStyle(fontSize: 13, color: Colors.grey),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 4),
+                  Text(
+                    widget.title,
+                    style: const TextStyle(fontSize: 14, color: Colors.black),
+                    maxLines: 2,
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    widget.price,
+                    style: const TextStyle(fontSize: 13, color: Colors.grey),
+                  ),
+                ],
               ),
             ],
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 }
