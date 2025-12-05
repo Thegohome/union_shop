@@ -178,6 +178,10 @@ class _AppHeaderState extends State<AppHeader> {
     Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
   }
 
+  void _navigateToAbout(BuildContext context) {
+    Navigator.pushNamed(context, '/about');
+  }
+
   void _placeholderCallback() {
     // Placeholder for buttons that don't have functionality yet
   }
@@ -245,7 +249,7 @@ class _AppHeaderState extends State<AppHeader> {
                               children: [
                                 NavMenuItem(
                                   text: 'Home',
-                                  onPressed: _placeholderCallback,
+                                  onPressed: () => _navigateToHome(context),
                                 ),
                                 const SizedBox(width: 24),
                                 NavMenuItem(
@@ -267,7 +271,7 @@ class _AppHeaderState extends State<AppHeader> {
                                 const SizedBox(width: 24),
                                 NavMenuItem(
                                   text: 'About',
-                                  onPressed: _placeholderCallback,
+                                  onPressed: () => _navigateToAbout(context),
                                 ),
                               ],
                             )
@@ -309,7 +313,7 @@ class _AppHeaderState extends State<AppHeader> {
                     padding: const EdgeInsets.all(8.0),
                     child: NavMenuItem(
                       text: 'Home',
-                      onPressed: _placeholderCallback,
+                      onPressed: () => _navigateToHome(context),
                     ),
                   ),
                   Padding(
@@ -339,7 +343,7 @@ class _AppHeaderState extends State<AppHeader> {
                     padding: const EdgeInsets.all(8.0),
                     child: NavMenuItem(
                       text: 'About',
-                      onPressed: _placeholderCallback,
+                      onPressed: () => _navigateToAbout(context),
                     ),
                   ),
                 ],
